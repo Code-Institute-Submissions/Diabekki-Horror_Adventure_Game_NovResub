@@ -20,29 +20,31 @@ The road is uneven and loose. You can hear a strange noise in the distance. \
 You come to large trench, you decide to: (a) climb through \
 (b) try to find a way around\n")
 
-    if answer == "a":
-        answer = input("You decided to investigate the noise in the pipe. \
+        if answer == "a":
+            print("You decided to investigate the noise in the pipe. \
 As you kneel down to look inside the scratching gets louder. \
 You see what appears to be a young girl crawling through the pipe. \
 The scratching was her nails pulling her body along the ground. \
-You back away as the girls eyes begin to glow red and she lunges towards them.\
+You back away as the girls eyes begin to glow red, she lunges towards you. \
 Thank you for playing. I hope you enjoyed. You got ending 9/9\n")
 
+        elif answer == "b":
+            print("INSERT BRANCH B HERE")
+
+        else:
+            print("Surely you have the hang of it by now?. You lose. \
+                HINT: Just type a or b")
+
     elif answer == "b":
-        print("INSERT BRANCH B HERE")
-    else:
-        print("Surely you have the hang of it by now?. You lose.\n"
-              "HINT: Just type a or b")
-    if answer == "b":
         answer = input("You find a nearby alleyway to try \
 and get around the roadworks. You continue through the alleyway and meet a \
 deadend where you have to choose to go: (a) left (b) right\n")
 
     else:
-        print("Is this a game to you?. You lose.\n"
-              "HINT: Just type a or b")
+        print("Is this a game to you?. You lose. \
+              HINT: Just type a or b")
 
-if answer == "b":
+elif answer == "b":
     print("I think you pressed the wrong button,\n"
           "please refresh the page and try again.\n"
           "(HINT: The correct choice is 'a'.)")
