@@ -30,19 +30,19 @@ You kneel down to investigate and notice a young girl staring \
 at you with a giant grin. She crawls toward you and everything goes black. \
 Thank you for playing. I hope you enjoyed. You got ending 9/9\n")
 
-        elif answer == "b":
+        elif answer == "b":  # Decision AAB
             print("INSERT BRANCH B HERE")
 
-        else:
+        else:  # Decision AAX
             print("Surely you have the hang of it by now?. You lose. \
                 HINT: Just type a or b")
 
-    elif answer == "b":  # Decision 1B
+    elif answer == "b":  # Decision AB
         answer = input("You find a nearby alleyway to try \
 and get around the roadworks. You continue through the alleyway and meet a \
 deadend where you have to choose to go: (a) left (b) right\n")
 
-    else:
+    else:  # Decision AX
         print("Is this a game to you?. You lose. \
               HINT: Just type a or b")
 
@@ -50,6 +50,6 @@ elif answer == "b":  # Decision B - This is option 'b' for game start
     print("I think you pressed the wrong button,\n"
           "please refresh the page and try again.\n"
           "(HINT: The correct choice is 'a'.)")
-else:  # Decision 'X'- This is to ensure valid data is entered
+else:  # Decision X- This is to ensure valid data is entered
     print("You're not very good at following instructions. You lose.\n"
           "HINT: Just type a or b")
