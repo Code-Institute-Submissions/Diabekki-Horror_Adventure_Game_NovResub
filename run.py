@@ -15,13 +15,13 @@ you have not walked the streets back home alone at night before. \
 After exiting the train station you decide to walk your usual day time \
 route home but notice road works have closed the route so you decide to:\n\
 (a)Jump the railing and continue on your path. \
-(b)Find an alternative route home.\n")
+(b)Find an alternative route home.\n").lower()
 
     if answer == "a":  # Decision AA
         answer = input("You jump the barrier to try and get home quickly. \
 The road is uneven and loose. You can hear a strange noise in the distance. \
 You come to large trench, you decide to: (a) climb through \
-(b) try to find a way around\n")
+(b) try to find a way around\n").lower()
 
         if answer == "a":  # Decision AAA (Ending 9/9)
             print("You decided to climb through the trench. \
@@ -46,11 +46,11 @@ SSHHH....")
     elif answer == "b":  # Decision AB
         answer = input("You find a nearby alleyway to try \
 and get around the roadworks. You continue through the alleyway and meet a \
-deadend where you have to choose to go: \n(a) left (b) right\n")
+deadend where you have to choose to go: \n(a) left (b) right\n").lower()
         if answer == "a":  # Decision ABA
             answer = input("You decided to go left and find yourself wondering through \
 what seems to be an endless labyrinth you decide to \n\
-(a) keep going forward (b) turn back.\n")
+(a) keep going forward (b) turn back.\n").lower()
             if answer == "a":  # Decision ABAA (Ending 7/9)
                 print("As you proceed, you hear a noise behind you\
 , you begin to run this noise becomes louder and louder. \
@@ -70,7 +70,7 @@ Thank you for playing, I hope you enjoyed. You got ending 8/9\n")
             answer = input("After continuing for a few minutes you exit the \
 alleyway in the local market street. You hear a strange scratching noises \
 coming from down the street. You \n\
-(a) go investigate the noise. (b) keep heading home.\n")
+(a) go investigate the noise. (b) keep heading home.\n").lower()
             if answer == "a":  # Decision ABBA (Ending 6/9)
                 print("You decided to walk down towards the strange noise \
 to investiogate. You turn towards a dark alleyway where the noise seems \
@@ -85,7 +85,7 @@ Thank you for playing and I hope you enjoyed. You got ending 6/9")
 a feeling of being watched. You quicken your pace, the scratching \
 noise you hear seems to be getting louder dispite heading in the \
 opposite direction.You notice a low wall you could possibly hide \
-behind, you decide to \n(a) run. (b) hide.\n")
+behind, you decide to \n(a) run. (b) hide.\n").lower()
                 if answer == "a":  # Decision ABBBA (Ending 5/9)
                     print("You start running in the hope of making \
 it home. The scratching is getting louder and faster. Something \
@@ -96,13 +96,13 @@ Thank you for playing I hope you enjoyed this ending 5/9!\n")
                     answer = input("You duck behind the wall as \
 the scratching gets louder and louder. After several minutes the \
 scratching seems to have stopped. You decides to \n \
-(a) keep hiding. (b) continue home.\n")
+(a) keep hiding. (b) continue home.\n").lower()
                     if answer == "a":  # Decision ABBBBA
                         answer = input("After several minutes \
 of hiding the scratching noise has repeatedly passed just behind \
 the wall as if what ever is there can sense you. You decide to \n \
 (a) jump the wall and hope they can outrun what ever lies on the other side.\
-(b) peek over the wall to try and investigate the noise.\n")
+(b) peek over the wall to try and investigate the noise.\n").lower()
                         if answer == "b":  # Decision ABBBBAB (Ending 4/9)
                             print("You slowly raises your head to \
 the wall. As your surroundings come into vision you notice what seems to \
@@ -123,7 +123,7 @@ Thank you for playing  and I hope you enjoyed. You got ending 3/9\n")
                         answer = input("You step back over the wall \
 to continue home. As they are moving they suddenly hear the scratching \
 return behind them. You decides to\n \
-(a) return behind the wall. (b) run.\n")
+(a) return behind the wall. (b) run.\n").lower()
                         if answer == "b":  # Decision ABBBBBB (Ending 1/9)
                             print("After running for several minutes, \
 You finally arrive at home, safely inside the four walls of your family home \
