@@ -27,7 +27,7 @@ You come to large trench, you decide to: (a) climb through \
             print("You decided to climb through the trench. \
 As you do you notice a pipe with a strange noise coming form it. \
 You kneel down to investigate and notice a young girl staring \
-at you with a giant grin. She crawls toward you and everything goes black. \
+at you with a giant grin. She crawls toward you and everything goes black.\n \
 Thank you for playing. I hope you enjoyed. You got ending 9/9\n")
 
         elif answer == "b":  # Decision AAB
@@ -86,6 +86,19 @@ a feeling of being watched. You quicken your pace, the scratching \
 noise you hear seems to be getting louder dispite heading in the \
 opposite direction.You notice a low wall you could possibly hide \
 behind, you decide to \n(a) run. (b) hide.\n")
+                if answer == "a":  # Decision ABBBA (Ending 5/9)
+                    print("You start running in the hope of making \
+it home. The scratching is getting louder and faster. Something \
+hits you from behind and you fall to the ground. You feel nails \
+tear into your back as everything fades to black.\n \
+Thank you for playing I hope you enjoyed this ending 5/9!\n")
+                elif answer == "b":  # Decision ABBBB
+                    answer = input("You duck behind the wall as \
+the scratching gets louder and louder. After several minutes the \
+scratching seems to have stopped. You decides to \n \
+(a) keep hiding. (b) continue home.\n")
+                else:  # Decision ABBBX
+                    print("So close yet so far. You lose! HINT: Type a or b")
             else:  # Decision ABBX
                 print("I think you're messing now. You lose!.")
 
