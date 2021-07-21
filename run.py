@@ -31,7 +31,13 @@ at you with a giant grin. She crawls toward you and everything goes black. \
 Thank you for playing. I hope you enjoyed. You got ending 9/9\n")
 
         elif answer == "b":  # Decision AAB
-            print("INSERT BRANCH B HERE")
+            print("You proceed in search of a new route. \
+As you proceed you feel eyes watching you. You turn around, \
+nothing is there. You breathe a sigh of relief. A sharp pain \
+shoots up your leg as you fall in pain. Two hands reach around \
+your head, you hear a childish giggle, everything goes black.\n \
+Thank you for playing I hope you enjoyed. This is a secret ending \n \
+SSHHH....")
 
         else:  # Decision AAX
             print("Surely you have the hang of it by now?. You lose. \n \
