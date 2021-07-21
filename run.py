@@ -41,6 +41,33 @@ Thank you for playing. I hope you enjoyed. You got ending 9/9\n")
         answer = input("You find a nearby alleyway to try \
 and get around the roadworks. You continue through the alleyway and meet a \
 deadend where you have to choose to go: (a) left (b) right\n")
+        if answer == "a":  # Decision ABA
+            answer = input("You decided to go left and find yourself wondering through \
+what seems to be an endless labyrinth you decide to \
+(a) keep going forward (b) turn back.\n")
+            if answer == "a":  # Decision ABAA (Ending 7/9)
+                print("As you proceed, you hear a noise behind you\
+, you begin to run this noise becomes louder and louder. \
+You trip, a set of glowing red eyes drag themselves up your legs \
+as you feel a set of cold hands on you. Darkness fades over you. \
+Thank you for playing, I hope you enjoyed. You got ending 7/9\n")
+            elif answer == "b":  # Decision ABAB (Ending 8/9)
+                print("As you turn around to go back you notice \
+a young girl lying on the ground. As you get closer you see she \
+seems to be missing her lower torso. You run to see if she is okay \
+She looks up and smiles before grinning to expose large razor like \
+teeth. \n \
+Thank you for playing, I hope you enjoyed. You got ending 8/9\n")
+            else:  # Decision ABAX
+                print("I think you're messing now. You lose!.")
+        elif answer == "b":  # Decision ABB
+            print("After continuing for a few minutes you exit the alleyway in the \
+local market street. You hear a strange scratching noices coming from down \
+the street. You (a) go investigate the noise. (b) keep heading home.\n")
+
+        else:  # Decision ABX
+            print("C'mon now, you can do better than that cant you?. You lose. \
+                HINT: Just type a or b")
 
     else:  # Decision AX
         print("Is this a game to you?. You lose. \
