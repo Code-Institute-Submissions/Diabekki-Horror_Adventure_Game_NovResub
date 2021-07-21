@@ -97,6 +97,50 @@ Thank you for playing I hope you enjoyed this ending 5/9!\n")
 the scratching gets louder and louder. After several minutes the \
 scratching seems to have stopped. You decides to \n \
 (a) keep hiding. (b) continue home.\n")
+                    if answer == "a":  # Decision ABBBBA
+                        answer = input("After several minutes \
+of hiding the scratching noise has repeatedly passed just behind \
+the wall as if what ever is there can sense you. You decide to \n \
+(a) jump the wall and hope they can outrun what ever lies on the other side.\
+(b) peek over the wall to try and investigate the noise.\n")
+                        if answer == "b":  # Decision ABBBBAB (Ending 4/9)
+                            print("You slowly raises your head to \
+the wall. As your surroundings come into vision you notice what seems to \
+be a young girl in a school uniform missing her lower torso. The young girls \
+head turns and looks at you. She begins dragging herself along the ground  \
+towards you the scratching getting louder and faster. \n \
+Thank you for playing and I hope you enjoyed. You got ending 4/9 \n")
+                        elif answer == "a":  # Decision ABBBBAA (Ending 3/9)
+                            print("You jump the wall and begin to run, \
+you collides with something and tumble to the ground. You look up in \
+fear only to realise it was your partner who was out looking for you \
+as they expected you home an hour ago.\n \
+Thank you for playing  and I hope you enjoyed. You got ending 3/9\n")
+                        else:  # Decision ABBBBAX
+                            print("Invalid answer,\
+                                   I hope you're proud of yourself.")
+                    elif answer == "b":  # Decision ABBBBB
+                        answer = input("You step back over the wall \
+to continue home. As they are moving they suddenly hear the scratching \
+return behind them. You decides to\n \
+(a) return behind the wall. (b) run.\n")
+                        if answer == "b":  # Decision ABBBBBB (Ending 1/9)
+                            print("After running for several minutes, \
+You finally arrive at home, safely inside the four walls of your family home \
+you feel that you can finally relax. You feel that over-time is not worth it \
+anymore.\n Thank you for playing and I hope you enjoyed. \
+ You got the Good ending 1/9 \n")
+                        elif answer == "a":  # Decision ABBBBBA (Ending 2/9)
+                            print("You jump back behind the wall and lie down \
+pushing as close to the wall as possible. The scratching gets \
+louder and louder until you look up and see a set of glowing  \
+red eyes lean over the wall above you. \n \
+Thank you for playing and I hope you enjoyed. You got ending 2/9\n")
+                        else:  # Decision ABBBBBX
+                            print("Invalid answer. \
+                                This is not the choice you're looking for.")
+                    else:  # Decision ABBBBX
+                        print("I expected better. Are you testing me?")
                 else:  # Decision ABBBX
                     print("So close yet so far. You lose! HINT: Type a or b")
             else:  # Decision ABBX
