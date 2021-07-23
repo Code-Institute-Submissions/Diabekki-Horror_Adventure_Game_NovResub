@@ -60,6 +60,16 @@ The game features a choice based adventure in which you play the main character 
 
 
  ## Testing
+ - In order to test that each individual ending operated correctly I used the A/B terminology (Naming structure seen above in second flow chart).
+ This allowed me to ensure each branch worked correctly, for example, 
+ Ending 1 uses the sequence - ABBBBBB, so knowing this, testing each ending was much easier.
+ - To ensure the user had a seamless experience I added an "x" sequence, this accounted for validation of the users input and would give a prompt if the user typed anything other than A or B in the decision sections. 
+ - With the ablove two strategies in place I could list every possible route and failure to simplify and condense my testing. 
+
+    ### Errors
+    - The most common error I seen was "line too long" which was easily avoided using line breaks
+    - I was getting errors from the template provided that had been there when I had done my previous Love Sandwiches mini project.
+    With regards to my project it did not affect the funtionality or playability of the game.
 
 
 
