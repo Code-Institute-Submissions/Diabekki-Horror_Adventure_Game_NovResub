@@ -1,13 +1,50 @@
-# GamerZone
-Thsi website is dedicated quiz page for those interested in gaming trivia and want to learn some new and obscure trivia in a fun enviroment with a retro arcade vibe that potrays a fresh young look as well as catering to the nostalgia seekers.
-
-![image of responsive page](assets/images/AmIResponsive.JPG)
+# Horror Adventure Game
+This project is a horror story game that has multiple branches available, the story is loosely based on a Japanese horror story known as the "Teke-Teke".
+The premise of the story is the user must pick the correct answer to get themselves home safely.
 
 ## Features
-This website features an easy navigation format to indicate where users need to click and begin the quiz experience and navigate back to the home page.
-The quiz features large contrasted previous and next buttons to help users know what to press as well as making the website more accessible for those with eyesight impairments.
+The game features a choice based adventure in which you play the main character and you have to guide yourself home safely and not get caught by the creature.
+- You choose how to proceed by answering a or b to the decision prompts.
+- Anything other than a or b will result in a game over and string of text telling the user what to press.
 
-## Flow Chart 
+### Name input
+- This is the section where the user is asked for their name to personalize the welcoming screen.
+
+![image of text flow chart for project](static/images-for-python-readme/name-input.JPG) 
+
+
+### Welcome screen
+- This is the welcome screen to welcome the user to the game, ask then their name and if they like to begin.
+
+![image of text flow chart for project](static/images-for-python-readme/welcome-screen-for-user.JPG) 
+
+
+### Quit message prompt
+- This is an example to show what happens when the user clicks to quit option at the beginning of the game.
+
+![image of text flow chart for project](static/images-for-python-readme/when-user-clicks-quit.JPG) 
+
+### First decision question
+- This the first decision question asked to the user and dictates what path they will be starting on in the story.
+
+![image of text flow chart for project](static/images-for-python-readme/first-decison-branch.JPG)
+
+### Game over example
+- This is an example of one of the bad ends in the game an, there are 9 endings in total throughout the story.
+
+![image of text flow chart for project](static/images-for-python-readme/game-over-example.JPG)
+
+### Invalid input example
+- This a message that appears when the player types anything other than A or B.
+- there a multiple invalid messages throughout the game to keep it interesting adds for replayability if the user wishes to see them all.
+
+![image of text flow chart for project](static/images-for-python-readme/invalid-input-message.JPG) 
+
+
+
+
+
+## Program Structure
 - This is the original draft flow chart for the project, I wanted to make multiple branches to tell the story
 - A few branches have been changed but the premise is still the same 
 ![image of text flow chart for project](static/images-for-python-readme/flow-chart-for-text.jpeg) 
