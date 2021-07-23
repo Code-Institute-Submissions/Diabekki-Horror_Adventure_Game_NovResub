@@ -41,12 +41,13 @@ The game features a choice based adventure in which you play the main character 
 ![image of text flow chart for project](static/images-for-python-readme/invalid-input-message.JPG) 
 
  **Features left to add**
-    - I would like to branch out and create many more endings and story routes to the game.
-    - Add more opportunities in the story for the user to personalize it further.
-    - Include longer and more descriptive ending sequences.
+- I would like to branch out and create many more endings and story routes to the game.
+- Add more opportunities in the story for the user to personalize it further.
+- Include longer and more descriptive ending sequences.
 
 
 ## Program Structure
+
 - This is the original draft flow chart for the project, I wanted to make multiple branches to tell the story.
 - A few branches have been changed but the premise is still the same.
 
@@ -59,24 +60,16 @@ The game features a choice based adventure in which you play the main character 
 
 
  ## Testing
-- Issues faced
 
-- Deployment Issues
-    - Issues I had faced after deployment of website was that all hyperlinks were broken and giving a 404 message.
-    Through slack and very helpful individuals in my course I finally spotted the issue which was a foward slash on my hyperlinks causing the 404 error. I removed them and pushed the website which solved the issue.
-
-- Summary
-    - In relation to testing the feedback provided from the participants was extremely useful in the development of the media queries and the pages overall funtionality. 
 
 
 ### Validator Testing 
+
 - I used PEP8 to validate my python code.
 - I manually tested every section of the game to make sure it played well
   and all the decision branches lined up well. 
   ![image of PEP8 validation test for my project](static/images-for-python-readme/python-project-validation-image.JPG)
     
-
-
 
   ## Deployment 
 
@@ -93,14 +86,6 @@ The game features a choice based adventure in which you play the main character 
   - Clicked "Deploy Branch" 
 
   The live link to Horror-Adventure-Game can be found here - https://horror-adventure-game.herokuapp.com/
-
-  ## Credits
-
-- https://www.sitepoint.com/ 
-    - What was used from this site was a guide on the structural layout of JavaScript, e.g fuctions, variables, etc.
-- https://favicon.io/
-    - This site was used to get the favicon.ico image for the website
-- Fonts used throughout website was taken from Google Fonts https://fonts.google.com/
 
 ## Acknowledgements
 
