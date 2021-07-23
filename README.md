@@ -40,24 +40,23 @@ The game features a choice based adventure in which you play the main character 
 
 ![image of text flow chart for project](static/images-for-python-readme/invalid-input-message.JPG) 
 
-
-
+ **Features left to add**
+    - I would like to branch out and create many more endings and story routes to the game.
+    - Add more opportunities in the story for the user to personalize it further.
+    - Include longer and more descriptive ending sequences.
 
 
 ## Program Structure
-- This is the original draft flow chart for the project, I wanted to make multiple branches to tell the story
-- A few branches have been changed but the premise is still the same 
+- This is the original draft flow chart for the project, I wanted to make multiple branches to tell the story.
+- A few branches have been changed but the premise is still the same.
+
 ![image of text flow chart for project](static/images-for-python-readme/flow-chart-for-text.jpeg) 
 
-- This is the re-done flow chart to show how to get to each branch ending and how they were labeled throughout to ensure the proper structure could be followed making it in gitpod
-- Some of the text has been changed from the original draft but this is the final chart to help reach all endings 
+- This is the re-done flow chart to show how to get to each branch ending and how they were labeled throughout to ensure the proper structure could be followed making it in gitpod.
+- Some of the text has been changed from the original draft but this is the final chart to help reach all endings.
+
 ![image of text flow chart for project](static/images-for-python-readme/flow-chart-for-decisions-guide.jpeg) 
 
- **Features left to add**
-    - Create an original song to add to the quiz page for user to play as they go through the quiz.
-    - More questions involving a wide variety of games.
-    - Either a carousel or a list of corresponding images that match question context and change when next button is clicked.
-    - To go through more Media queries to make the website even more accessible to a wider variety of users.
 
  ## Testing
 - Issues faced
@@ -81,15 +80,19 @@ The game features a choice based adventure in which you play the main character 
 
   ## Deployment 
 
-- My site was deployed through GitHub pages, my methodology was:
-  - I went to the project GitHub respository 
-  - Clicked on the settings tab
-  - went to pages section
-  - From the drop down menu I selected the master branch 
-  - I then clicked Save
-  - I was then given a message on screen to inform me my project has been deployed.
+- The game was deployed through Heroku 
+  - I went on to the Heroku website 
+  - Clicked on "Create-New-App"
+  - Named my project and stated what region I live in
+  - I clicked into settings 
+  - Added the Python and Nodejs buildpack
+  - Clicked into Deploy 
+  - Connected to my GitHub
+  - Searched for my project name repository and clicked connect
+  - Enabled automatic deploys
+  - Clicked "Deploy Branch" 
 
-  The live link to my webiste can be found here - https://diabekki.github.io/GamerZone/index.html
+  The live link to Horror-Adventure-Game can be found here - https://horror-adventure-game.herokuapp.com/
 
   ## Credits
 
