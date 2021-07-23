@@ -1,7 +1,7 @@
 user = input("What is your name? \n")  # Collecting the users name
 # A welcome message explaining the game and its funtion mechanic
-print("Welcome", user, ", this is a horror-adventure game based on a Japenese\n \
- urban legend that uses an 'a' or 'b' choice mechanic. Anything entered\n \
+print("Welcome", user, ", this is a horror-adventure game based on a Japenese\n\
+ urban legend that uses an 'a' or 'b' choice mechanic. Anything entered\n\
  that is not A or B will result in automatic loss of the game.\n")
 
 # This is the game start to test the users understanding of the 'a'/'b' option.
@@ -9,12 +9,12 @@ print("Welcome", user, ", this is a horror-adventure game based on a Japenese\n 
 answer = input("Are you ready to begin? \n(a)begin (b)quit\n").lower()
 
 if answer == "a":  # Decision A
-    answer = input("You arrive at your local train station after finishing \
-a late shift, it was not a common occurance for you to work overtime so \
-you have not walked the streets back home alone at night before. \
-After exiting the train station you decide to walk your usual day time \
+    answer = input("You arrive at your local train station after finishing\n\
+a late shift, it was not a common occurance for you to work overtime so\n\
+you have not walked the streets back home alone at night before.\n\
+After exiting the train station you decide to walk your usual day time\n\
 route home but notice road works have closed the route so you decide to:\n\
-(a)Jump the railing and continue on your path. \
+(a)Jump the railing and continue on your path.\n\
 (b)Find an alternative route home.\n").lower()
 
     if answer == "a":  # Decision AA
