@@ -1,45 +1,74 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# GamerZone
+Thsi website is dedicated quiz page for those interested in gaming trivia and want to learn some new and obscure trivia in a fun enviroment with a retro arcade vibe that potrays a fresh young look as well as catering to the nostalgia seekers.
 
-Welcome Diabekki,
+![image of responsive page](assets/images/AmIResponsive.JPG)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+## Features
+This website features an easy navigation format to indicate where users need to click and begin the quiz experience and navigate back to the home page.
+The quiz features large contrasted previous and next buttons to help users know what to press as well as making the website more accessible for those with eyesight impairments.
 
-## Gitpod Reminders
+## Flow Chart 
+- This is the original draft flow chart for the project, I wanted to make multiple branches to tell the story
+- A few branches have been changed but the premise is still the same 
+![image of text flow chart for project](static/images-for-python-readme/flow-chart-for-text.jpeg) 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+- This is the re-done flow chart to show how to get to each branch ending and how they were labeled throughout to ensure the proper structure could be followed making it in gitpod
+- Some of the text has been changed from the original draft but this is the final chart to help reach all endings 
+![image of text flow chart for project](static/images-for-python-readme/flow-chart-for-decisions-guide.jpeg) 
 
-`python3 -m http.server`
+ **Features left to add**
+    - Create an original song to add to the quiz page for user to play as they go through the quiz.
+    - More questions involving a wide variety of games.
+    - Either a carousel or a list of corresponding images that match question context and change when next button is clicked.
+    - To go through more Media queries to make the website even more accessible to a wider variety of users.
 
-A blue button should appear to click: *Make Public*,
+ ## Testing
+- Issues faced
 
-Another blue button should appear to click: *Open Browser*.
+- Deployment Issues
+    - Issues I had faced after deployment of website was that all hyperlinks were broken and giving a 404 message.
+    Through slack and very helpful individuals in my course I finally spotted the issue which was a foward slash on my hyperlinks causing the 404 error. I removed them and pushed the website which solved the issue.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+- Summary
+    - In relation to testing the feedback provided from the participants was extremely useful in the development of the media queries and the pages overall funtionality. 
 
-A blue button should appear to click: *Make Public*,
 
-Another blue button should appear to click: *Open Browser*.
+### Validator Testing 
+- I used PEP8 to validate my python code.
+- I manually tested every section of the game to make sure it played well
+  and all the decision branches lined up well. 
+  ![image of PEP8 validation test for my project](static/images-for-python-readme/python-project-validation-image.JPG)
+    
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
 
-## Updates Since The Instructional Video
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+  ## Deployment 
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- My site was deployed through GitHub pages, my methodology was:
+  - I went to the project GitHub respository 
+  - Clicked on the settings tab
+  - went to pages section
+  - From the drop down menu I selected the master branch 
+  - I then clicked Save
+  - I was then given a message on screen to inform me my project has been deployed.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+  The live link to my webiste can be found here - https://diabekki.github.io/GamerZone/index.html
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+  ## Credits
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+- https://www.sitepoint.com/ 
+    - What was used from this site was a guide on the structural layout of JavaScript, e.g fuctions, variables, etc.
+- https://favicon.io/
+    - This site was used to get the favicon.ico image for the website
+- Fonts used throughout website was taken from Google Fonts https://fonts.google.com/
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+## Acknowledgements
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+I want to thank my Fiance who kept pushing me to keep bettering myself and not letting me give up and for giving me advice on how get the readme to sound more structured and professional.
+Fellow students for letting me vent frustrations when I felt overwhelmed with the work.
+Kasia who keeps up our morale and always checks to see if we are doing okay and finally my mentor for guiding me pushing me to do more challeging work.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
---------
 
-Happy coding!
+
+
