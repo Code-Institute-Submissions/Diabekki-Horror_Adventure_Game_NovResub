@@ -1,6 +1,8 @@
 # Horror Adventure Game
 This project is a horror story game that has multiple branches available, the story is loosely based on a Japanese horror story known as the "Teke-Teke".
 The premise of the story is the user must pick the correct answer to get themselves home safely.
+The game is fully built on "If" statmements, nested together to create a branching story system with multiple endings. 
+
 
 ## Features
 The game features a choice based adventure in which you play the main character and you have to guide yourself home safely and not get caught by the creature.
@@ -40,10 +42,12 @@ The game features a choice based adventure in which you play the main character 
 
 ![image of text flow chart for project](static/images-for-python-readme/invalid-input-message.JPG) 
 
+
  **Features left to add**
 - I would like to branch out and create many more endings and story routes to the game.
 - Add more opportunities in the story for the user to personalize it further.
 - Include longer and more descriptive ending sequences.
+- I would like to add CSS in the future - Images and audio clips to enhance the user experience 
 
 
 ## Program Structure
@@ -70,7 +74,6 @@ The game features a choice based adventure in which you play the main character 
     - The most common error I seen was "line too long" which was easily avoided using line breaks
     - I was getting errors from the template provided that had been there when I had done my previous Love Sandwiches mini project.
     With regards to my project it did not affect the funtionality or playability of the game.
-
 
 
 ### Validator Testing 
