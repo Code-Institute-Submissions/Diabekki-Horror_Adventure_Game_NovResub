@@ -45,7 +45,7 @@ The game features a choice-based adventure in which you play the main character 
 
 ### Game over example
 
-- This is an example of one of the bad ends in the game, there are 9 endings in total throughout the story.
+- This is an example of one of the bad endings in the game, there are 9 endings in total throughout the story.
 
 ![image of the game over example](static/images-for-python-readme/game-over-example.JPG)
 
@@ -78,33 +78,34 @@ The game features a choice-based adventure in which you play the main character 
 ![image of decision guide chart for the project](static/images-for-python-readme/flow-chart-for-decisions-guide.jpeg) 
 
 
- ## Testing
+## Testing
 
  - To test that each ending operated correctly I used the A/B terminology (Naming structure seen above in second flow chart).
  This allowed me to ensure each branch worked correctly, for example, 
  Ending 1 uses the sequence - ABBBBBB, so knowing this, testing each ending was much easier.
  - To ensure the user had a seamless experience I added an "x" sequence, this accounted for validation of the user's input and would give a prompt if the user typed anything other than A or B in the decision sections. 
- - With the above two strategies in place I could list every possible route and failure to simplify and condense my testing. 
  - Feedback produced two results:
     - First - The input name accepted blank space, this issue has been fixed so an error message appears if the user leaves the space blank.
     - Second - The input name accepts numbers, this I did not view as a concern as there are individuals who have adopted numbers into their name.
 
-  ### Errors
+### Errors
 
-  - The most common error I have seen was "line too long" which was easily avoided using line breaks
+  - The most common error I have seen was "line too long" which was easily avoided using line breaks.
   - I was getting errors from the template provided that had been there when I had done my previous Love Sandwiches mini-project.
   With regards to my project, it did not affect the functionality or playability of the game.
+    - After communicating the issue to my class lead I was made aware that it was a template issue I was not responsible to fix.
 
 
 ### Validator Testing 
 
 - I used PEP8 to validate my python code.
-- I manually tested every section of the game to make sure it played well and all the decision branches lined up well. 
 
   ![image of PEP8 validation test for my project](static/images-for-python-readme/python-project-validation-image.JPG)
-    
 
-  ## Deployment 
+## Unfixed bugs
+- After testing the project there are no bugs that I am aware of.    
+
+## Deployment 
 
 - The game was deployed through Heroku 
   - I went on to the Heroku website 
