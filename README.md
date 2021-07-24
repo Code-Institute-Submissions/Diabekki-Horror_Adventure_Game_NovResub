@@ -70,6 +70,11 @@ The game features a choice based adventure in which you play the main character 
  Ending 1 uses the sequence - ABBBBBB, so knowing this, testing each ending was much easier.
  - To ensure the user had a seamless experience I added an "x" sequence, this accounted for validation of the users input and would give a prompt if the user typed anything other than A or B in the decision sections. 
  - With the ablove two strategies in place I could list every possible route and failure to simplify and condense my testing. 
+ - Feedback produced two results:
+    - First - The input name accepted blank space, this issue has been fixed so an error message appears if the user leaves the space blank.
+    - Second - The input name accepts numbers, this I did not view as a concern as there are individuals who have adopted numbers into their name.
+
+
 
     ### Errors
     - The most common error I seen was "line too long" which was easily avoided using line breaks
