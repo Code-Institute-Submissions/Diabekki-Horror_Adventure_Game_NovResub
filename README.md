@@ -11,6 +11,7 @@ The game features a choice based adventure in which you play the main character 
 
 ### Name input
 - This is the section where the user is asked for their name to personalize the welcoming screen.
+- The game can continue 
 
 ![image of text flow chart for project](static/images-for-python-readme/name-input.JPG) 
 

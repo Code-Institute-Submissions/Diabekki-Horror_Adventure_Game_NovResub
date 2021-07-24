@@ -1,4 +1,7 @@
-user = input("What is your name? \n")  # Collecting the users name
+# Collecting the users name
+user = input("What is your name? \n")
+if not user.isalpha():
+    print("Only letters are accepted")
 # A welcome message explaining the game and its function mechanic
 print("Welcome", user, ", this is a horror-adventure game based on a Japenese\n\
  an urban legend that uses an 'a' or 'b' choice mechanic. Anything entered\n\
