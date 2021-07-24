@@ -53,7 +53,7 @@ where you see two sepertate paths\n\
 do you to choose to go:\n (a)left (b)right\n").lower()
 
         if answer == "a":  # Decision ABA
-            answer = input("You decided to go left and find yourself wondering through\n\
+            answer = input("You decided to go left and find yourself wandering through\n\
 what seems to be an endless labyrinth you decide to\n\
 (a) keep going forward (b) turn back.\n").lower()
 
