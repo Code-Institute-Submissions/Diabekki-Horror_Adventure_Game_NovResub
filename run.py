@@ -1,11 +1,9 @@
 # Collecting the users name
-user = input("What is your name? \n")
+user = input("What is your name? \n").isalpha()
 # A welcome message explaining the game and its function mechanic
 print("Welcome", user, ", this is a horror-adventure game based on a Japenese\n\
  an urban legend that uses an 'a' or 'b' choice mechanic. Anything entered\n\
  that is not A or B will result in automatic loss of the game.\n")
-if not user.isalpha():
-    print("Only letters are accepted")
 
 # This is the game start to test the users understanding of the 'a'/'b' option.
 # Introduction
