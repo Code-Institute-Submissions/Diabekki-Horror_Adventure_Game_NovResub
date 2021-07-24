@@ -136,7 +136,7 @@ as they expected you home an hour ago and became worried.\n\
 Thank you for playing and I hope you enjoyed it. You got ending 3/9\n")
 
                         else:  # Decision ABBBBAX
-                            print("Invalid answer,\
+                            print("Invalid answer,\n\
                                    I hope you're proud of yourself.")
 
                     elif answer == "b":  # Decision ABBBBB
@@ -160,7 +160,7 @@ red eyes lean over the wall above you.\n\
 Thank you for playing and I hope you enjoyed it. You got ending 2/9\n")
 
                         else:  # Decision ABBBBBX
-                            print("Invalid answer. \
+                            print("Invalid answer.\n\
                                 This is not the choice you're looking for.")
 
                     else:  # Decision ABBBBX
