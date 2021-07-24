@@ -1,7 +1,7 @@
 user = input("What is your name? \n")  # Collecting the users name
-# A welcome message explaining the game and its funtion mechanic
+# A welcome message explaining the game and its function mechanic
 print("Welcome", user, ", this is a horror-adventure game based on a Japenese\n\
- urban legend that uses an 'a' or 'b' choice mechanic. Anything entered\n\
+ an urban legend that uses an 'a' or 'b' choice mechanic. Anything entered\n\
  that is not A or B will result in automatic loss of the game.\n")
 
 # This is the game start to test the users understanding of the 'a'/'b' option.
@@ -10,7 +10,7 @@ answer = input("Are you ready to begin? \n(a)begin (b)quit\n").lower()
 
 if answer == "a":  # Decision A
     answer = input("You arrive at your local train station after finishing\n\
-a late shift, it was not a common occurance for you to work overtime so\n\
+a late shift, it was not a common occurrence for you to work overtime so\n\
 you have not walked the streets back home alone at night before.\n\
 After exiting the train station you decide to walk your usual day time\n\
 route home but notice road works have closed the route so you decide to:\n\
@@ -20,17 +20,18 @@ route home but notice road works have closed the route so you decide to:\n\
     if answer == "a":  # Decision AA
         answer = input("You jump the barrier to try and get home quickly.\n\
 The road is uneven and loose. You can hear a strange noise in the distance.\n\
-You come to large trench, you decide to: (a) climb through\n\
+You come to a large trench, you decide to:\n\
+(a) climb through\n\
 (b) try to find a way around\n").lower()
 
         if answer == "a":  # Decision AAA (Ending 9/9)
             print("You decided to climb through the trench.\n\
-As you do you notice a pipe with a scratching noises coming form it.\n\
-You assume its a stray cat and kneel down to investigate\n\
+As you do you notice a pipe with a scratching noise coming from it.\n\
+You assume its a stray cat and kneel to investigate\n\
 and you see a young girl staring\n\
 at you with a giant grin getting bigger.\n\
 She crawls toward you quickly and everything goes black.\n \
-Thank you for playing. I hope you enjoyed. You got ending 9/9\n")
+Thank you for playing. I hope you enjoyed it. You got ending 9/9\n")
 
         elif answer == "b":  # Decision AAB
             print("You proceed in search of a new route.\n\
@@ -38,7 +39,7 @@ As you walk you feel eyes watching you. You turn around,\n\
 nothing is there. You breathe a sigh of relief. Then a sharp pain\n\
 shoots up your leg and you fall in pain. Two hands reach around\n\
 your head, you hear a childish giggle, everything goes black.\n\
-Thank you for playing I hope you enjoyed. This is a secret ending \n\
+Thank you for playing I hope you enjoyed it. This is a secret ending \n\
 SSHHH....")
 
         else:  # Decision AAX
@@ -59,9 +60,9 @@ what seems to be an endless labyrinth you decide to\n\
             if answer == "a":  # Decision ABAA (Ending 7/9)
                 print("As you proceed, you hear a noise behind you\n\
 , you begin to run this noise becomes louder and louder.\n\
-You trip, a set of glowing red eyes drag themselves up your legs\n\
+You trip, a set of glowing red eyes drag themselves up to your legs\n\
 as you feel a set of cold hands on you. Darkness fades over you.\n\
-Thank you for playing, I hope you enjoyed. You got ending 7/9\n")
+Thank you for playing, I hope you enjoyed it. You got ending 7/9\n")
 
             elif answer == "b":  # Decision ABAB (Ending 8/9)
                 print("As you turn around to go back you notice\n\
@@ -69,7 +70,7 @@ a young girl lying on the ground. As you get closer you see she\n\
 seems to be missing her lower torso. You run to see if she is okay\n\
 She looks up and smiles before grinning to expose large razor like\n\
 teeth.\n\
-Thank you for playing, I hope you enjoyed. You got ending 8/9\n")
+Thank you for playing, I hope you enjoyed it. You got ending 8/9\n")
 
             else:  # Decision ABAX
                 print("I think you're messing now. You lose!.")
@@ -87,15 +88,15 @@ to come from. As you get closer you notice what\n\
 seems to be a young girl in a school uniform missing her lower torso.\n\
 You scream and the young girls head turns to see you.\n\
 She begins dragging herself\n\
-along the ground towards you the scratching of her nails getting louder\n\
+along the ground towards you, the scratching of her nails getting louder\n\
 and faster.\n\
-Thank you for playing and I hope you enjoyed. You got ending 6/9")
+Thank you for playing and I hope you enjoyed it. You got ending 6/9")
 
             elif answer == "b":  # Decision ABBB
                 answer = input("You continue on your way home with\n\
 a feeling of being watched. You quicken your pace, the scratching of nails\n\
 you hear seems to be getting louder despite heading in the\n\
-opposite direction. You notice a low wall you could possibly hide\n\
+opposite direction. You notice a low wall you could hide\n\
 behind, you decide to \n(a) run. (b) hide.\n").lower()
 
                 if answer == "a":  # Decision ABBBA (Ending 5/9)
@@ -123,16 +124,16 @@ the wall as if what ever is there can sense you. You decide to \n \
 wall. As your surroundings come into vision you notice what seems to\n\
 be a young girl in a school uniform missing her lower torso.\n\
 The young girl uses her nails to drag herself along the ground\n\
-She head turns and looks at you. She drags herself along the ground\n\
-towards you the scratching getting louder and faster.\n\
-Thank you for playing and I hope you enjoyed. You got ending 4/9 \n")
+Her head turns and looks at you. She drags herself along the ground\n\
+towards you, the scratching getting louder and faster.\n\
+Thank you for playing and I hope you enjoyed it. You got ending 4/9 \n")
 
                         elif answer == "a":  # Decision ABBBBAA (Ending 3/9)
                             print("You jump the wall and begin to run,\n\
 you collide with something and tumble to the ground. You look up in\n\
-fear only to realise it was your partner who was out looking for you\n\
+fear only to realize it was your partner who was out looking for you\n\
 as they expected you home an hour ago and became worried.\n\
-Thank you for playing  and I hope you enjoyed. You got ending 3/9\n")
+Thank you for playing and I hope you enjoyed it. You got ending 3/9\n")
 
                         else:  # Decision ABBBBAX
                             print("Invalid answer,\
@@ -146,9 +147,9 @@ return behind you. You decide to\n\
 
                         if answer == "b":  # Decision ABBBBBB (Ending 1/9)
                             print("After running for several minutes,\n\
-You finally back safely inside the four walls of your family home\n\
+You are finally back safely inside the four walls of your family home\n\
 you know you can finally relax. You feel that over-time is not worth it\n\
-anymore.\n Thank you for playing and I hope you enjoyed.\n\
+anymore.\n Thank you for playing and I hope you enjoyed it.\n\
  You got the Good ending 1/9 \n")
 
                         elif answer == "a":  # Decision ABBBBBA (Ending 2/9)
@@ -156,7 +157,7 @@ anymore.\n Thank you for playing and I hope you enjoyed.\n\
 pushing as close to the wall as possible. The scratching gets\n\
 louder and louder until you look up and see a set of glowing \n\
 red eyes lean over the wall above you.\n\
-Thank you for playing and I hope you enjoyed. You got ending 2/9\n")
+Thank you for playing and I hope you enjoyed it. You got ending 2/9\n")
 
                         else:  # Decision ABBBBBX
                             print("Invalid answer. \
@@ -181,9 +182,9 @@ Thank you for playing and I hope you enjoyed. You got ending 2/9\n")
 
 elif answer == "b":  # Decision B - This is option 'b' for game start
     print("I think you pressed the wrong button,\n"
-          "please refresh the page and try again.\n"
+          "Please refresh the page and try again.\n"
           "(HINT: The correct choice is 'a'.)")
 
-else:  # Decision X- This is to ensure valid data is entered
-    print("You're not very good at following instructions. You lose.\n"
-          "HINT: Just type a or b")
+else:  # Decision X- This is to ensure valid data is entered print
+    ("You're not very good at following instructions. You lose.\n"
+     "HINT: Just type a or b")
