@@ -18,14 +18,21 @@ def get_age_data():
     """
     Get age figures inputs from the user
     """
-    print("Please enter your age.")
-    print("Age should be input as numbers only.")
-    print("Example: 24, 32, 45 not twenty-four, thirty-two, etc.\n")
+    while True:
+        print("Please enter your age.")
+        print("Age should be input as numbers only.")
+        print("Example: 24, 32, 45 not twenty-four, thirty-two, etc.\n")
 
-    age_string = ("Enter age information here")
+        age_string = ("Enter age information here")
 
-    age_data = age_string.split(",")
-    validate_data(age_data)
+        age_data = age_string.split(",")
+        validate_data(age_data)
+
+        if validate_data(age_data):
+            print("Information is valid!")
+            break
+
+    return age_data
 
 
 def validate_data(values):
@@ -40,9 +47,12 @@ def validate_data(values):
 
     except ValueError:
         print('This is not a number. Please try again')
+        return False
+
+    return True
 
 
-get_age_data()
+data = get_age_data()
 
 
 # Collecting the users name
