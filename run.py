@@ -12,11 +12,21 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('game_survey')
 
-survey = SHEET.worksheet('survey')
 
-survey_data = survey.get_all_values()
+def get_survey_data():
+    """
+    Get survey figures inputs from the user
+    """
+    print("Please enter your age.")
+    print("Age should be input as numbers only.")
+    print("Example: 24, 32, 45 not twenty-four, thirty-two, etc.\n")
 
-print(survey_data)
+    survey_string = input("Enter your information here: ")
+    print(f"The age provided is {survey_string}")
+
+
+get_survey_data()
+
 
 # Collecting the users name
 user = input("What is your name? \n")
