@@ -23,10 +23,9 @@ def get_age_data():
         print("Age should be input as numbers only.")
         print("Example: 24, 32, 45 not twenty-four, thirty-two, etc.\n")
 
-        age_string = ("Enter age information here")
+        age_string = input("Press enter to begin")
 
         age_data = age_string.split(",")
-        validate_data(age_data)
 
         if validate_data(age_data):
             print("Information is valid!")
@@ -37,9 +36,7 @@ def get_age_data():
 
 def validate_data(values):
     """
-    Converts all strings into integers.
-    Raises ValueError if strings can not be converted.
-    or if there are more than 2 values input for age
+    Raises ValueError if user does not input integer into age question
     """
     try:
         values = int(input('Enter your age: '))
@@ -52,7 +49,19 @@ def validate_data(values):
     return True
 
 
+def update_age_worksheet(data):
+    """
+    Updates age data in survey
+    """
+    print("Updating survey worksheet...")
+    age_worksheet = SHEET.worksheet("age")
+    age_worksheet.append_row(data)
+    print("Survey updated successfully..")
+
+
 data = get_age_data()
+age_data = [int(num) for num in data]
+update_age_worksheet(age_data)
 
 
 # Collecting the users name
