@@ -1,6 +1,7 @@
 import gspread
 from google.oauth2.service_account import Credentials
 
+
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -13,19 +14,35 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('game_survey')
 
 
-def get_survey_data():
+def get_age_data():
     """
-    Get survey figures inputs from the user
+    Get age figures inputs from the user
     """
     print("Please enter your age.")
     print("Age should be input as numbers only.")
     print("Example: 24, 32, 45 not twenty-four, thirty-two, etc.\n")
 
-    survey_string = input("Enter your information here: ")
-    print(f"The age provided is {survey_string}")
+    age_string = ("Enter age information here")
+
+    age_data = age_string.split(",")
+    validate_data(age_data)
 
 
-get_survey_data()
+def validate_data(values):
+    """
+    Converts all strings into integers.
+    Raises ValueError if strings can not be converted.
+    or if there are more than 2 values input for age
+    """
+    try:
+        values = int(input('Enter your age: '))
+        print('Thank you. The entered age is: ', values)
+
+    except ValueError:
+        print('This is not a number. Please try again')
+
+
+get_age_data()
 
 
 # Collecting the users name
