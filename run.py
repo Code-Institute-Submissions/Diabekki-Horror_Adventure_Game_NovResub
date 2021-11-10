@@ -1,5 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
+from pprint import pprint
 
 
 SCOPE = [
@@ -66,13 +67,33 @@ def update_age_worksheet(data):
     print("Survey updated successfully.\n")
 
 
-data = get_age_data()
-age_data = [int(num) for num in data]
-update_age_worksheet(age_data)
+def calculate_survey_data(age_row):
+    """
+    Calculating survey results data
+    """
+    print("Calculating survey data...")
+    genre = SHEET.worksheet("genre").get_all_values()
+    genre_row = genre[-1]
+    print(genre_row)
+
+
+def main():
+    """
+    Run program functions
+    """
+    data = get_age_data()
+    age_data = [int(num) for num in data]
+    update_age_worksheet(age_data)
+    calculate_survey_data(age_data)
+
+
+print("Welcome to the game survey! By continuing with the survey questions\n\
+asked, you give consent for information to be stored for survey information")
+main()
 
 
 # Collecting the users name
-def user_name():
+def game():
     user = input("What is your name? \n")
     if user == "":
         print("Blank space not valid, please insert name")
