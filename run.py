@@ -1,3 +1,4 @@
+from pprint import pprint
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -49,7 +50,7 @@ def validate_data(values):
                 f"only 1 number allowed, you provided {len(values)}"
             )
     except ValueError as e:
-        print(f"Invalid data: {e}, please try again. \n")
+        print(f"Invalid data: {e}, please try again.\n")
         return False
 
     return True
@@ -74,7 +75,21 @@ def calculate_survey_data(age_row):
     print("Calculating survey data...")
     genre = SHEET.worksheet("genre").get_all_values()
     genre_row = genre[-1]
-    print(genre_row)
+
+
+def survey_entries_age():
+    """
+    Collects collums of data from age worksheet,
+    collecting the genre entries and returns a list of lists
+    """
+    age = SHEET.worksheet("age")
+
+    columns = []
+    for ind in range(1, 7):
+        column = age.col_values(ind)
+        columns.append(column[-5:])
+
+    return columns
 
 
 def main():
@@ -88,9 +103,12 @@ def main():
     update_worksheet(new_survey_data, "survey")
 
 
-print("Welcome to the game survey! By continuing with the survey questions\n\
-asked, you give consent for information to be stored for survey information")
-main()
+print("Welcome to the pre-game survey! Before the game begins you will be\n\
+asked some survey questions. By continuing with the survey questions\n\
+asked, you give consent for information to be stored for data information.\n\
+Have fun!")
+# main()
+age_columns = survey_entries_age()
 
 
 # Collecting the users name
