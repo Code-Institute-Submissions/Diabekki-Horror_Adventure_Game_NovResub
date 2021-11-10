@@ -1,6 +1,5 @@
 import gspread
 from google.oauth2.service_account import Credentials
-from pprint import pprint
 
 
 SCOPE = [
@@ -40,9 +39,8 @@ def get_age_data():
 
 def validate_data(values):
     """
-    Inside the try, converts all string values into integers.
     Raises ValueError if strings cannot be converted into int,
-    or if there aren't exactly 6 values.
+    or if there isn't exactly 1 number.
     """
     try:
         [int(value) for value in values]
@@ -64,6 +62,16 @@ def update_age_worksheet(data):
     print("Updating survey...\n")
     age_worksheet = SHEET.worksheet("age")
     age_worksheet.append_row(data)
+    print("Survey age updated successfully.\n")
+
+
+def update_survey_worksheet(data):
+    """
+    Update survey in worksheet
+    """
+    print("Updating survey...\n")
+    survey_worksheet = SHEET.worksheet("survey")
+    survey_worksheet.append_row(data)
     print("Survey updated successfully.\n")
 
 
@@ -84,7 +92,8 @@ def main():
     data = get_age_data()
     age_data = [int(num) for num in data]
     update_age_worksheet(age_data)
-    calculate_survey_data(age_data)
+    new_survey_data = calculate_survey_data(age_data)
+    update_survey_worksheet(new_survey_data)
 
 
 print("Welcome to the game survey! By continuing with the survey questions\n\
