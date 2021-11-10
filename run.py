@@ -49,30 +49,22 @@ def validate_data(values):
                 f"only 1 number allowed, you provided {len(values)}"
             )
     except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
+        print(f"Invalid data: {e}, please try again. \n")
         return False
 
     return True
 
 
-def update_age_worksheet(data):
+def update_worksheet(data, worksheet):
     """
-    Update age in worksheet
+    Receives list of information for worksheet
+    and updates the relevant worksheet with the
+    date given
     """
-    print("Updating survey...\n")
-    age_worksheet = SHEET.worksheet("age")
-    age_worksheet.append_row(data)
-    print("Survey age updated successfully.\n")
-
-
-def update_survey_worksheet(data):
-    """
-    Update survey in worksheet
-    """
-    print("Updating survey...\n")
-    survey_worksheet = SHEET.worksheet("survey")
-    survey_worksheet.append_row(data)
-    print("Survey updated successfully.\n")
+    print(f"Updating {worksheet} worksheet...")
+    worksheet_to_update = SHEET.worksheet(worksheet)
+    worksheet_to_update.append_row(data)
+    print(f"{worksheet} updated successfully")
 
 
 def calculate_survey_data(age_row):
@@ -91,9 +83,9 @@ def main():
     """
     data = get_age_data()
     age_data = [int(num) for num in data]
-    update_age_worksheet(age_data)
+    update_worksheet(age_data, "age")
     new_survey_data = calculate_survey_data(age_data)
-    update_survey_worksheet(new_survey_data)
+    update_worksheet(new_survey_data, "survey")
 
 
 print("Welcome to the game survey! By continuing with the survey questions\n\
