@@ -153,12 +153,11 @@ route home but notice road works have closed the route so you decide to:\n\
                         sys.exit()
 
                     elif answer == "b":  # Decision ABAB (Ending 8/9)
-                        print("As you turn around to go back you notice\n\
+                        answer = input("As you turn around to go back you notice\n\
     a young girl lying on the ground. As you get closer you see she\n\
     seems to be missing her lower torso. You run to see if she is okay\n\
     She looks up and smiles before grinning to expose large razor like\n\
-    teeth.\n\
-    Thank you for playing, I hope you enjoyed it. You got ending 8/9\n\
+    teeth. Thank you for playing, I hope you enjoyed it. You got ending 8/9\n\
     Would you like to restart? Press 'y' for YES and 'n' for NO:...\n").lower()
                     if answer == "y":
                         start_game()
@@ -202,7 +201,7 @@ route home but notice road works have closed the route so you decide to:\n\
     behind, you decide to \n(a) run. (b) hide.\n").lower()
 
                         if answer == "a":  # Decision ABBBA (Ending 5/9)
-                            print("You start running in the hope of making\n\
+                            answer = input("You start running in the hopes of making\n\
     it home. The scratching is getting louder and faster. Something\n\
     hits you from behind and you fall to the ground. You feel nails\n\
     tear into your back as everything fades to black.\n\
@@ -230,7 +229,7 @@ route home but notice road works have closed the route so you decide to:\n\
     (b) peek over the wall to try and investigate the noise.\n").lower()
 
                                 if answer == "b":  # Decision ABBBBAB (End 4/9)
-                                    print("You slowly raises your head above the\n\
+                                    answer = input("You slowly raises your head above the\n\
     wall. As your surroundings come into vision you notice what seems to\n\
     be a young girl in a school uniform missing her lower torso.\n\
     The young girl uses her nails to drag herself along the ground\n\
@@ -248,7 +247,7 @@ route home but notice road works have closed the route so you decide to:\n\
 
         # Decision ABBBBAA (Ending 3/9)
                                 elif answer == "a":
-                                    print("You jump the wall and begin to run,\n\
+                                    answer = input("You jump the wall and begin to run,\n\
     you collide with something and tumble to the ground. You look up in\n\
     fear only to realize it was your partner who was out looking for you\n\
     as they expected you home an hour ago and became worried.\n\
@@ -272,7 +271,7 @@ route home but notice road works have closed the route so you decide to:\n\
     (a) return behind the wall. (b) run.\n").lower()
 
                                 if answer == "b":  # Decision ABBBBBB (End 1/9)
-                                    print("After running for several minutes,\n\
+                                    answer = input("After running for several minutes,\n\
     You are finally back safely inside the four walls of your family home\n\
     you know you can finally relax. You feel that over-time is not worth it\n\
     anymore.\n Thank you for playing and I hope you enjoyed it.\n\
@@ -284,9 +283,9 @@ route home but notice road works have closed the route so you decide to:\n\
                                         print("Thank you for playing!")
                                         sys.exit()
 
-        # Decision ABBBBBA (Ending 2/9)
+                                # Decision ABBBBBA (Ending 2/9)
                                 elif answer == "a":
-                                    print("You jump back behind the wall and lie down\n\
+                                    answer = input("You jump back behind the wall and lie down\n\
     pushing as close to the wall as possible. The scratching gets\n\
     louder and louder until you look up and see a set of glowing \n\
     red eyes lean over the wall above you.\n\
@@ -297,7 +296,8 @@ route home but notice road works have closed the route so you decide to:\n\
                                     elif answer == "n":
                                         print("Thank you for playing!")
                                         sys.exit()
-
+                                    else:
+                                        invalid_input()
                                 else:  # Decision ABBBBBX
                                     invalid_input()
 
@@ -362,13 +362,13 @@ def validate_data(values):
     or if there isn't exactly 1 number.
     """
     try:
-        [int(value) for value in values]
+        # [int(value) for value in values]
         if len(values) > 1:
             raise ValueError(
                 f"only 1 number allowed, you provided {len(values)}"
             )
-    except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
+    except ValueError:
+        print("Invalid data:, please try again.\n")
         return False
 
     return True
