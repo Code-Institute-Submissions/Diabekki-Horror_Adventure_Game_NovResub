@@ -14,203 +14,17 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('game_survey')
 
 
-def get_age_data():
-    """
-    Get age from the user.
-    Run a while loop to collect a valid string of data from the user
-    via the terminal, which must be 1 number.
-    The loop will repeatedly request data, until it is valid.
-    """
-    while True:
-        print("Please enter your age.")
-        print("age information should be 1 number, no letters should be used.")
-        print("Example: 20, not twenty\n")
-
-        age_str = input("Enter age information here:\n")
-
-        age_data = age_str.split(",")
-
-        if validate_data(age_data):
-            print("Information is valid!")
-            break
-
-    return age_data
-
-
-def validate_data(values):
-    """
-    Raises ValueError if strings cannot be converted into int,
-    or if there isn't exactly 1 number.
-    """
-    try:
-        [int(value) for value in values]
-        if len(values) > 1:
-            raise ValueError(
-                f"only 1 number allowed, you provided {len(values)}"
-            )
-    except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
-        return False
-
-    return True
-
-
-def get_survey_data():
-    """
-    Get age from the user.
-    Run a while loop to collect a valid string of data from the user
-    via the terminal, which must be 1 number.
-    The loop will repeatedly request data, until it is valid.
-    """
-    while True:
-        print("Please enter your favourite genre.")
-        print("Horror, Sci-fi, Action, RPG, Crime")
-
-        survey_data = input("Enter genre information here: ")
-
-        if validate_survey_data(survey_data):
-            print("Information is valid!")
-            break
-
-    return survey_data
-
-
-def validate_survey_data(values):
-    """
-    Raises ValueError if strings cannot be converted into int,
-    or if there isn't exactly 1 number.
-    """
-    try:
-        if values.lower() != "horror" and values.lower() != "action" and values.lower() != "rpg" and values.lower() != "sci-fi" and values.lower() != "crime":
-            raise ValueError(f"genre entered is {values}, you should enter horror, crime, rpg, action or sci-fi")
-    except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
-        return False
-
-    return True
-
-
-def update_worksheet(data, worksheet):
-    """
-    Receives list of information for worksheet
-    and updates the relevant worksheet with the
-    date given
-    """
-    print(f"Updating {worksheet} worksheet...")
-    worksheet_to_update = SHEET.worksheet(worksheet)
-    worksheet_to_update.append_row(data)
-    print(f"{worksheet} updated successfully")
-
-
-rpg_sheet = SHEET.worksheet("rpg")
-horror_sheet = SHEET.worksheet("horror")
-action_sheet = SHEET.worksheet("action")
-crime_sheet = SHEET.worksheet("crime")
-scifi_sheet = SHEET.worksheet("sci-fi")
-
-
-def survey_entries_age(survey_data, age_data):
-    """
-    """
-    the_age = age_data
-    print("Sending data to survey worksheet...")
-    if survey_data == "horror":
-        horror_sheet.append_row(the_age)
-        print("Calculating new average...")
-        first_column = horror_sheet.col_values(1)
-        int_column = [int(num) for num in first_column]
-        average = sum(int_column) / len(int_column)
-        horror_sheet.update_acell('B2', average)
-        print("Calculating complete...")
-
-    elif survey_data == "action":
-        action_sheet.append_row(the_age)
-        print("Calculating new average...")
-        first_column = action_sheet.col_values(1)
-        int_column = [int(num) for num in first_column]
-        average = sum(int_column) / len(int_column)
-        action_sheet.update_acell('B2', average)
-        print("Calculating complete...")
-    elif survey_data == "rpg":
-        rpg_sheet.append_row(the_age)
-        print("Calculating new average...")
-        first_column = rpg_sheet.col_values(1)
-        int_column = [int(num) for num in first_column]
-        average = sum(int_column) / len(int_column)
-        rpg_sheet.update_acell('B2', average)
-        print("Calculating complete...")
-    elif survey_data == "sci-fi":
-        scifi_sheet.append_row(the_age)
-        print("Calculating new average...")
-        first_column = scifi_sheet.col_values(1)
-        int_column = [int(num) for num in first_column]
-        average = sum(int_column) / len(int_column)
-        scifi_sheet.update_acell('B2', average)
-        print("Calculating complete...")
-    elif survey_data == "crime":
-        crime_sheet.append_row(the_age)
-        print("Calculating new average...")
-        first_column = crime_sheet.col_values(1)
-        int_column = [int(num) for num in first_column]
-        average = sum(int_column) / len(int_column)
-        crime_sheet.update_acell('B2', average)
-        print("Calculating complete...")
-
-
-def survey_results():
-    horror_average = horror_sheet.acell("B2").value
-    print(f"The average age for playing horror games is {horror_average}")
-
-    action_average = action_sheet.acell("B2").value
-    print(f"The average age for playing action games is {action_average}")
-
-    rpg_average = rpg_sheet.acell("B2").value
-    print(f"The average age for playing rpg games is {rpg_average}")
-
-    crime_average = crime_sheet.acell("B2").value
-    print(f"The average age for playing crime games is {crime_average}")
-
-    scifi_average = scifi_sheet.acell("B2").value
-    print(f"The average age for playing scifi games is {scifi_average}")
-
-
-def main():
-    """
-    Run program functions
-    """
-    data = get_age_data()
-    age_data = [int(num) for num in data]
-    update_worksheet(age_data, "age")
-    new_survey_data = calculate_survey_data(age_data)
-    update_worksheet(new_survey_data, "survey")
-
-
-print("Welcome to the pre-game survey! Before the game begins you will be\n\
-asked some survey questions. By continuing with the survey questions\n\
-asked, you give consent for information to be stored for data information.\n\
-Have fun!")
-# main()
-# age_columns = survey_entries_age()
-# calculate_genre_data(age_columns)
-genres = get_survey_data()
-survey_age = get_age_data()
-survey_entries_age(genres, survey_age)
-survey_results()
-
-
-# Collecting the users name
-def game():
-    user = input("What is your name? \n")
+# Start of game
+def start_game():
+    user = input("Thank you for taking our survey!\n\
+    Before we begin, What is your name?\n")
     if user == "":
         print("Blank space not valid, please insert name")
-
-
-# A welcome message explaining the game and its function mechanic
+    # A welcome message explaining the game and its function mechanic
     else:
         print("Welcome", user, ", this is a horror-adventure game based on a Japenese\n\
     an urban legend that uses an 'a' or 'b' choice mechanic. Anything entered\n\
     that is not A or B will result in automatic loss of the game.\n")
-
     # This is the game start to test the users understanding of the 'a'/'b' option.
     # Introduction
         answer = input("Are you ready to begin? \n(a)begin (b)quit\n").lower()
@@ -231,7 +45,8 @@ def game():
     (a) climb through\n\
     (b) try to find a way around\n").lower()
 
-                if answer == "a":  # Decision AAA (Ending 9/9)
+                if answer == "a":
+                    # Decision AAA (Ending 9/9)
                     print("You decided to climb through the trench.\n\
     As you do you notice a pipe with a scratching noise coming from it.\n\
     You assume its a stray cat and kneel to investigate\n\
@@ -239,7 +54,6 @@ def game():
     at you with a giant grin getting bigger.\n\
     She crawls toward you quickly and everything goes black.\n \
     Thank you for playing. I hope you enjoyed it. You got ending 9/9\n")
-
                 elif answer == "b":  # Decision AAB
                     print("You proceed in search of a new route.\n\
     As you walk you feel eyes watching you. You turn around,\n\
@@ -398,3 +212,183 @@ def game():
         else:  # Decision X- This is to ensure valid data is entered print
             print("You're not very good at following instructions. You lose.\n\
     HINT: Just type a or b")
+
+
+def get_age_data():
+    """
+    Get age from the user.
+    Run a while loop to collect a valid string of data from the user
+    via the terminal, which must be 1 number.
+    The loop will repeatedly request data, until it is valid.
+    """
+    while True:
+        print("Please enter your age.")
+        print("age information should be 1 number, no letters should be used.")
+        print("Example: 20, not twenty\n")
+
+        age_str = input("Enter age information here:\n")
+
+        age_data = age_str.split(",")
+
+        if validate_data(age_data):
+            print("Information is valid!")
+            break
+
+    return age_data
+
+
+def validate_data(values):
+    """
+    Raises ValueError if strings cannot be converted into int,
+    or if there isn't exactly 1 number.
+    """
+    try:
+        [int(value) for value in values]
+        if len(values) > 1:
+            raise ValueError(
+                f"only 1 number allowed, you provided {len(values)}"
+            )
+    except ValueError as e:
+        print(f"Invalid data: {e}, please try again.\n")
+        return False
+
+    return True
+
+
+def get_survey_data():
+    """
+    Get age from the user.
+    Run a while loop to collect a valid string of data from the user
+    via the terminal, which must be 1 number.
+    The loop will repeatedly request data, until it is valid.
+    """
+    while True:
+        print("Please enter your favourite genre.")
+        print("Horror, Sci-fi, Action, RPG, Crime")
+
+        survey_data = input("Enter genre information here: ")
+
+        if validate_survey_data(survey_data):
+            print("Information is valid!")
+            break
+
+    return survey_data
+
+
+def validate_survey_data(values):
+    """
+    Raises ValueError if strings cannot be converted into int,
+    or if there isn't exactly 1 number.
+    """
+    try:
+        if values.lower() != "horror" and values.lower() != "action" and values.lower() != "rpg" and values.lower() != "sci-fi" and values.lower() != "crime":
+            raise ValueError(f"genre entered is {values}, you should enter horror, crime, rpg, action or sci-fi")
+    except ValueError as e:
+        print(f"Invalid data: {e}, please try again.\n")
+        return False
+
+    return True
+
+
+def update_worksheet(data, worksheet):
+    """
+    Receives list of information for worksheet
+    and updates the relevant worksheet with the
+    date given
+    """
+    print(f"Updating {worksheet} worksheet...")
+    worksheet_to_update = SHEET.worksheet(worksheet)
+    worksheet_to_update.append_row(data)
+    print(f"{worksheet} updated successfully")
+
+
+rpg_sheet = SHEET.worksheet("rpg")
+horror_sheet = SHEET.worksheet("horror")
+action_sheet = SHEET.worksheet("action")
+crime_sheet = SHEET.worksheet("crime")
+scifi_sheet = SHEET.worksheet("sci-fi")
+
+
+def survey_entries_age(survey_data, age_data):
+    """
+    """
+    the_age = age_data
+    print("Sending data to survey worksheet...")
+    if survey_data == "horror":
+        horror_sheet.append_row(the_age)
+        print("Calculating new average...")
+        first_column = horror_sheet.col_values(1)
+        int_column = [int(num) for num in first_column]
+        average = sum(int_column) / len(int_column)
+        horror_sheet.update_acell('B2', average)
+        print("Calculating complete...")
+
+    elif survey_data == "action":
+        action_sheet.append_row(the_age)
+        print("Calculating new average...")
+        first_column = action_sheet.col_values(1)
+        int_column = [int(num) for num in first_column]
+        average = sum(int_column) / len(int_column)
+        action_sheet.update_acell('B2', average)
+        print("Calculating complete...")
+
+    elif survey_data == "rpg":
+        rpg_sheet.append_row(the_age)
+        print("Calculating new average...")
+        first_column = rpg_sheet.col_values(1)
+        int_column = [int(num) for num in first_column]
+        average = sum(int_column) / len(int_column)
+        rpg_sheet.update_acell('B2', average)
+        print("Calculating complete...")
+
+    elif survey_data == "sci-fi":
+        scifi_sheet.append_row(the_age)
+        print("Calculating new average...")
+        first_column = scifi_sheet.col_values(1)
+        int_column = [int(num) for num in first_column]
+        average = sum(int_column) / len(int_column)
+        scifi_sheet.update_acell('B2', average)
+        print("Calculating complete...")
+   
+    elif survey_data == "crime":
+        crime_sheet.append_row(the_age)
+        print("Calculating new average...")
+        first_column = crime_sheet.col_values(1)
+        int_column = [int(num) for num in first_column]
+        average = sum(int_column) / len(int_column)
+        crime_sheet.update_acell('B2', average)
+        print("Calculating complete...")
+
+
+def survey_results():
+    horror_average = horror_sheet.acell("B2").value
+    print(f"The average age for playing horror games is {horror_average}")
+
+    action_average = action_sheet.acell("B2").value
+    print(f"The average age for playing action games is {action_average}")
+
+    rpg_average = rpg_sheet.acell("B2").value
+    print(f"The average age for playing rpg games is {rpg_average}")
+
+    crime_average = crime_sheet.acell("B2").value
+    print(f"The average age for playing crime games is {crime_average}")
+
+    scifi_average = scifi_sheet.acell("B2").value
+    print(f"The average age for playing scifi games is {scifi_average}")
+
+
+def main():
+    """
+    Run program functions
+    """
+    genres = get_survey_data()
+    survey_age = get_age_data()
+    survey_entries_age(genres, survey_age)
+    survey_results()
+    start_game()
+  
+print("Welcome to the pre-game survey! Before the game begins you will be\
+asked some survey questions. By continuing with the survey questions\
+asked, you give consent for information to be stored for data information.\
+Have fun!")
+main()
