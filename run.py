@@ -28,7 +28,6 @@ def get_age_data():
         print("Example: 20, not twenty\n")
 
         age_str = input("Enter age information here: ")
-
         age_data = age_str.split(",")
 
         if validate_data(age_data):
@@ -56,6 +55,41 @@ def validate_data(values):
     return True
 
 
+def get_survey_data():
+    """
+    Get age from the user.
+    Run a while loop to collect a valid string of data from the user
+    via the terminal, which must be 1 number.
+    The loop will repeatedly request data, until it is valid.
+    """
+    while True:
+        print("Please enter your favourite genre.")
+        print("Horror, Sci-fi, Action, RPG, Crime")
+
+        survey_data = input("Enter genre information here: ")
+
+        if validate_survey_data(survey_data):
+            print("Information is valid!")
+            break
+
+    return survey_data
+
+
+def validate_survey_data(values):
+    """
+    Raises ValueError if strings cannot be converted into int,
+    or if there isn't exactly 1 number.
+    """
+    try:
+        if values.lower() != "horror" and values.lower() != "action" and values.lower() != "rpg" and values.lower() != "sci-fi" and values.lower() != "crime":
+            raise ValueError(f"genre entered is {values}, you should enter horror, crime, rpg, action or sci-fi")
+    except ValueError as e:
+        print(f"Invalid data: {e}, please try again.\n")
+        return False
+
+    return True
+
+
 def update_worksheet(data, worksheet):
     """
     Receives list of information for worksheet
@@ -67,29 +101,75 @@ def update_worksheet(data, worksheet):
     worksheet_to_update.append_row(data)
     print(f"{worksheet} updated successfully")
 
+rpg_sheet = SHEET.worksheet("rpg")
+horror_sheet = SHEET.worksheet("horror")
+action_sheet = SHEET.worksheet("action")
+crime_sheet = SHEET.worksheet("crime")
+scifi_sheet = SHEET.worksheet("sci-fi")
 
-def calculate_survey_data(age_row):
+def survey_entries_age(survey_data, age_data):
     """
-    Calculating survey results data
     """
-    print("Calculating survey data...")
-    genre = SHEET.worksheet("genre").get_all_values()
-    genre_row = genre[-1]
+    the_age = age_data
+    print("Sending data to survey worksheet...")
+    if survey_data == "horror":
+        horror_sheet.append_row(the_age)
+        print("Calculating new average...")
+        first_column = horror_sheet.col_values(1)
+        int_column = [int(num) for num in first_column]
+        average = sum(int_column) / len(int_column)
+        horror_sheet.update_acell('B2', average)
+        print("Calculating complete...")
+
+    elif survey_data == "action":
+        action_sheet.append_row(the_age)
+        print("Calculating new average...")
+        first_column = action_sheet.col_values(1)
+        int_column = [int(num) for num in first_column]
+        average = sum(int_column) / len(int_column)
+        action_sheet.update_acell('B2', average)
+        print("Calculating complete...")
+    elif survey_data == "rpg":
+        rpg_sheet.append_row(the_age)
+        print("Calculating new average...")
+        first_column = rpg_sheet.col_values(1)
+        int_column = [int(num) for num in first_column]
+        average = sum(int_column) / len(int_column)
+        rpg_sheet.update_acell('B2', average)
+        print("Calculating complete...")
+    elif survey_data == "sci-fi":
+        scifi_sheet.append_row(the_age)
+        print("Calculating new average...")
+        first_column = scifi_sheet.col_values(1)
+        int_column = [int(num) for num in first_column]
+        average = sum(int_column) / len(int_column)
+        scifi_sheet.update_acell('B2', average)
+        print("Calculating complete...")
+    elif survey_data == "crime":
+        crime_sheet.append_row(the_age)
+        print("Calculating new average...")
+        first_column = crime_sheet.col_values(1)
+        int_column = [int(num) for num in first_column]
+        average = sum(int_column) / len(int_column)
+        crime_sheet.update_acell('B2', average)
+        print("Calculating complete...")
 
 
-def survey_entries_age():
-    """
-    Collects collums of data from age worksheet,
-    collecting the genre entries and returns a list of lists
-    """
-    age = SHEET.worksheet("age")
+def survey_results():
+    horror_average = horror_sheet.acell("B2").value
+    print(f"The average age for playing horror games is {horror_average}")
 
-    columns = []
-    for ind in range(1, 7):
-        column = age.col_values(ind)
-        columns.append(column[-5:])
+    action_average = action_sheet.acell("B2").value
+    print(f"The average age for playing action games is {action_average}")
 
-    return columns
+    rpg_average = rpg_sheet.acell("B2").value
+    print(f"The average age for playing rpg games is {rpg_average}")
+
+    crime_average = crime_sheet.acell("B2").value
+    print(f"The average age for playing crime games is {crime_average}")
+
+    scifi_average = scifi_sheet.acell("B2").value
+    print(f"The average age for playing scifi games is {scifi_average}")
 
 
 def main():
@@ -108,7 +188,13 @@ asked some survey questions. By continuing with the survey questions\n\
 asked, you give consent for information to be stored for data information.\n\
 Have fun!")
 # main()
-age_columns = survey_entries_age()
+# age_columns = survey_entries_age()
+# calculate_genre_data(age_columns)
+genres = get_survey_data()
+survey_age = get_age_data()
+survey_entries_age(genres, survey_age)
+survey_results()
+
 
 
 # Collecting the users name
