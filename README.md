@@ -1,7 +1,7 @@
 # Horror Adventure Game
-This project is a horror story game that has multiple branches available, the story is loosely based on a Japanese horror story known as the "Teke-Teke".
+This project is a horror story game that has multiple branches available, the story is based on a Japanese horror story known as the "Teke-Teke".
 The premise of the story is the user must pick the correct answer to get themselves home safely.
-The application also features a survey which asks the player age and favourite genre to give an average of ages that play each genre.
+The application also features a survey which asks the players age and favourite genre to collects an average of ages that play each genre.
 
 
 ## Features
@@ -31,9 +31,6 @@ The game features a choice-based adventure in which you play the main character 
 ![image of name input section](static/images-for-python-readme/name-input.JPG)
 
 
-![image of name input section](static/images-for-python-readme/name-begin-prompt.JPG) 
-
-
 ### Blank name input error
 
 - This is a message that appears if the user leaves a blank space instead of putting in a name or username 
@@ -45,33 +42,33 @@ The game features a choice-based adventure in which you play the main character 
 
 - This is the welcome screen to welcome the user to the game, ask them their name and if they like to begin.
 
-![image of welcome screen](static/images-for-python-readme/welcome-screen-for-user.JPG) 
+
+![image of name input section](static/images-for-python-readme/name-begin-prompt.JPG)  
 
 
 ### Quit message prompt
 
 - This is an example to show what happens when the user chooses to quit at the beginning of the game.
 
-![image of quit message](static/images-for-python-readme/when-user-clicks-quit.JPG) 
+![image of quit message](static/images-for-python-readme/player-initial-quit.JPG) 
 
 ### First decision question
 
 - This is the first decision question asked to the user and dictates what path they will be starting on in the story.
 
-![Image of the first decision in game](static/images-for-python-readme/first-decision-branch.JPG)
+![Image of the first decision in game](static/images-for-python-readme/first-question-branch.JPG)
 
 ### Game over example
 
 - This is an example of one of the bad endings in the game, there are 9 endings in total throughout the story.
-
-![image of the game over example](static/images-for-python-readme/game-over-example.JPG)
+- The player will also receive a prompt to restart the game if they wish
+![image of the game over example](static/images-for-python-readme/game-over-restart.JPG)
 
 ### Invalid input example
 
-- This is a message that appears when the player types anything other than A or B.
-- there a multiple invalid messages throughout the game to keep it interesting adds for replayability if the user wishes to see them all.
+- This is a message that appears when the player types anything other than A or B when asked
 
-![image of invalid input](static/images-for-python-readme/invalid-input-message.JPG) 
+![image of invalid input](static/images-for-python-readme/invalid-input.JPG) 
 
 
  **Features left to add**
@@ -83,6 +80,9 @@ The game features a choice-based adventure in which you play the main character 
 
 
 ## Program Structure
+
+- This is the gspread worksheet that was used to gather data for the game survey
+![image of the text flow chart for the project](static/images-for-python-readme/game-survey.JPG)
 
 - This is the original draft flow chart for the project, I wanted to make multiple branches to tell the story.
 - A few branches have been changed but the premise is still the same.
@@ -107,8 +107,8 @@ The game features a choice-based adventure in which you play the main character 
 
 ### Errors
 
-  - The most common error I have seen was "line too long" which was easily avoided using line breaks.
-  - I was getting errors from the template provided that had been there when I had done my previous Love Sandwiches mini-project.
+  - The most common error I have seen was "line too long" which was easily avoided using line breaks but I could break for a small few lines of code as it affected the function of the code
+  - I was getting errors from the template provided that had been there already when I had done my previous Love Sandwiches mini-project.
   With regards to my project, it did not affect the functionality or playability of the game.
     - After communicating the issue to my class lead I was made aware that it was a template issue I was not responsible to fix.
 
@@ -117,7 +117,9 @@ The game features a choice-based adventure in which you play the main character 
 
 - I used PEP8 to validate my python code.
 
-  ![image of PEP8 validation test for my project](static/images-for-python-readme/python-project-validation-image.JPG)
+  ![image of PEP8 validation test for my project](static/images-for-python-readme/pep8.JPG)
+
+- The code has no other functionality issues to note and as previously stated I could not shorten the two lines of code as it would affect the outcome of the code
 
 ## Unfixed bugs
 - After testing the project there are no bugs that I am aware of.    
@@ -139,10 +141,10 @@ The game features a choice-based adventure in which you play the main character 
   The live link to Horror-Adventure-Game can be found here - https://horror-adventure-game.herokuapp.com/
 
 ## Acknowledgements
-
 I want to thank my Fiance who kept pushing me to keep bettering myself and not letting me give up and for giving me advice on how to get the readme to sound more structured and professional.
 Fellow students for letting me vent frustrations when I felt overwhelmed with the work.
 Kasia who keeps up our morale and always checks to see if we are doing okay and finally my mentor for guiding me pushing me to do more challenging work.
+and my wonderful friends that I made through this course that have helped me every step of the way when I struggled.
 
 
 
