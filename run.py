@@ -1,4 +1,3 @@
-from pprint import pprint
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -27,7 +26,8 @@ def get_age_data():
         print("age information should be 1 number, no letters should be used.")
         print("Example: 20, not twenty\n")
 
-        age_str = input("Enter age information here: ")
+        age_str = input("Enter age information here:\n")
+
         age_data = age_str.split(",")
 
         if validate_data(age_data):
@@ -101,11 +101,13 @@ def update_worksheet(data, worksheet):
     worksheet_to_update.append_row(data)
     print(f"{worksheet} updated successfully")
 
+
 rpg_sheet = SHEET.worksheet("rpg")
 horror_sheet = SHEET.worksheet("horror")
 action_sheet = SHEET.worksheet("action")
 crime_sheet = SHEET.worksheet("crime")
 scifi_sheet = SHEET.worksheet("sci-fi")
+
 
 def survey_entries_age(survey_data, age_data):
     """
@@ -194,7 +196,6 @@ genres = get_survey_data()
 survey_age = get_age_data()
 survey_entries_age(genres, survey_age)
 survey_results()
-
 
 
 # Collecting the users name
