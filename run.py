@@ -1,6 +1,6 @@
+import sys
 import gspread
 from google.oauth2.service_account import Credentials
-import sys
 
 
 SCOPE = [
@@ -14,42 +14,43 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('game_survey')
 
-#Invalid input loop
+
+# Invalid input loop
 def invalid_input():
-            answer = input("Not a valid input. Please type a or b\n\
-            Would you like to restart?\n\
-            Press 'y' for YES and 'n' for NO:...\n").lower()
-            if answer == "y":
-                start_game()
-            elif answer == "n":
-                print("Thank you for playing!")
-                sys.exit()
-            else:
-                invalid_input()
+    answer = input("Not a valid input. Please type a or b\n\
+    Would you like to restart?\n\
+    Press 'y' for YES and 'n' for NO:...\n").lower()
+    if answer == "y":
+        start_game()
+    elif answer == "n":
+        print("Thank you for playing!")
+        sys.exit()
+    else:
+        invalid_input()
+
 
 # Start of game
 def start_game():
-    user = input("Thank you for taking our survey!\n\
-    Before we begin, What is your name?\n")
+    user = input("Before we begin, What is your name?\n")
     if user == "":
         print("Blank space not valid, please insert name")
     # A welcome message explaining the game and its function mechanic
     else:
-        print("Welcome", user, ", this is a horror-adventure game based on a Japenese\n\
-    an urban legend that uses an 'a' or 'b' choice mechanic. Anything entered\n\
-    that is not A or B will result in automatic loss of the game.\n")
-    # This is the game start to test the users understanding of the 'a'/'b' option.
-    # Introduction
+        print("Welcome", user, ", this is a horror-adventure game based on a\n\
+urban legend called the Teke-Teke that uses an 'a' or 'b' choice mechanic.\n\
+Anything entered that is not A or B will result in loss of the game.\n")
+# This is the game start to test the users understanding of the 'a'/'b' option.
+# Introduction
         answer = input("Are you ready to begin? \n(a)begin (b)quit\n").lower()
 
         if answer == "a":  # Decision A
             answer = input("You arrive at your local train station after finishing\n\
-    a late shift, it was not a common occurrence for you to work overtime so\n\
-    you have not walked the streets back home alone at night before.\n\
-    After exiting the train station you decide to walk your usual day time\n\
-    route home but notice road works have closed the route so you decide to:\n\
-    (a)Jump the railing and continue on your path.\n\
-    (b)Find an alternative route home.\n").lower()
+a late shift, it was not a common occurrence for you to work overtime so\n\
+you have not walked the streets back home alone at night before.\n\
+After exiting the train station you decide to walk your usual day time\n\
+route home but notice road works have closed the route so you decide to:\n\
+(a)Jump the railing and continue on your path.\n\
+(b)Find an alternative route home.\n").lower()
 
             if answer == "a":  # Decision AA
                 answer = input("You jump the barrier to try and get home quickly.\n\
@@ -65,7 +66,7 @@ def start_game():
     You assume its a stray cat and kneel to investigate\n\
     and you see a young girl staring\n\
     at you with a giant grin getting bigger.\n\
-    She crawls toward you quickly and everything goes black.\n \
+    She crawls toward you quickly and everything goes black.\n\
     Thank you for playing. I hope you enjoyed it. You got ending 9/9\n\
     Would you like to restart? Press 'y' for YES and 'n' for NO:...\n").lower()
                     if answer == "y":
@@ -92,7 +93,7 @@ def start_game():
                         sys.exit()
                     else:
                         invalid_input()
-                    
+
                 else:  # Decision AAX
                     answer = input("Not a valid input. Please type a or b\n\
                     Would you like to restart?\n\
@@ -128,7 +129,7 @@ def start_game():
                     elif answer == "n":
                         print("Thank you for playing!")
                         sys.exit()
-                     
+
                     elif answer == "b":  # Decision ABAB (Ending 8/9)
                         print("As you turn around to go back you notice\n\
     a young girl lying on the ground. As you get closer you see she\n\
@@ -206,7 +207,7 @@ def start_game():
     (a) jump the wall and hope you can outrun what ever it is.\n\
     (b) peek over the wall to try and investigate the noise.\n").lower()
 
-                                if answer == "b":  # Decision ABBBBAB (Ending 4/9)
+                                if answer == "b":  # Decision ABBBBAB (End 4/9)
                                     print("You slowly raises your head above the\n\
     wall. As your surroundings come into vision you notice what seems to\n\
     be a young girl in a school uniform missing her lower torso.\n\
@@ -239,7 +240,6 @@ def start_game():
                                     else:
                                         invalid_input()
 
-
                                 else:  # Decision ABBBBAX
                                     invalid_input()
 
@@ -249,7 +249,7 @@ def start_game():
     return behind you. You decide to\n\
     (a) return behind the wall. (b) run.\n").lower()
 
-                                if answer == "b":  # Decision ABBBBBB (Ending 1/9)
+                                if answer == "b":  # Decision ABBBBBB (End 1/9)
                                     print("After running for several minutes,\n\
     You are finally back safely inside the four walls of your family home\n\
     you know you can finally relax. You feel that over-time is not worth it\n\
@@ -293,7 +293,7 @@ def start_game():
 
             else:  # Decision AX
                 invalid_input()
-       
+
         elif answer == "b":  # Decision B - This is option 'b' for game start
             answer = input("Thank you playing!\n\
             Would you like to restart?\n\
@@ -310,6 +310,7 @@ def start_game():
             invalid_input()
 
 
+# Age data function
 def get_age_data():
     """
     Get age from the user.
@@ -362,7 +363,7 @@ def get_survey_data():
         print("Please enter your favourite genre.")
         print("Horror, Sci-fi, Action, RPG, Crime")
 
-        survey_data = input("Enter genre information here: ")
+        survey_data = input("genre information: ")
 
         if validate_survey_data(survey_data):
             print("Information is valid!")
@@ -445,7 +446,7 @@ def survey_entries_age(survey_data, age_data):
         average = sum(int_column) / len(int_column)
         scifi_sheet.update_acell('B2', average)
         print("Calculating complete...")
-   
+
     elif survey_data == "crime":
         crime_sheet.append_row(the_age)
         print("Calculating new average...")
@@ -482,9 +483,10 @@ def main():
     survey_entries_age(genres, survey_age)
     survey_results()
     start_game()
-  
-print("Welcome to the pre-game survey! Before the game begins you will be\
-asked some survey questions. By continuing with the survey questions\
+
+
+print("Welcome to the pre-game survey! Before the game begins you will be asked\
+some survey questions. By continuing with the survey questions\
 asked, you give consent for information to be stored for data information.\
 Have fun!")
 main()

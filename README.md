@@ -1,13 +1,19 @@
 # Horror Adventure Game
 This project is a horror story game that has multiple branches available, the story is loosely based on a Japanese horror story known as the "Teke-Teke".
 The premise of the story is the user must pick the correct answer to get themselves home safely.
-The game is fully built on "If" statements, nested together to create a branching story system with multiple endings. 
+The application also features a survey which asks the player age and favourite genre to give an average of ages that play each genre.
 
 
 ## Features
-The game features a choice-based adventure in which you play the main character and you have to guide yourself home safely and not get caught by the creature.
+The game features a choice-based adventure in which you play the main character and you have to guide yourself home safely and not get caught by the creature and a survey that uploads data to gspread
 - You choose how to proceed by answering a or b to the decision prompts.
 - Anything other than a or b will result in a game over and a string of text telling the user what to press.
+- input age when prompted and favourite genre for gaming survey
+
+### Pre-game survey questions
+
+- This section asks the user for their favourite genre to add to the data sheet 
+![image of name input section](static/images-for-python-readme/pre-game-survey-questions.JPG) 
 
 ### Name input
 
