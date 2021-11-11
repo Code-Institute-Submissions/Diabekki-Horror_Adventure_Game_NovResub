@@ -1,5 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
+import sys
 
 
 SCOPE = [
@@ -13,6 +14,18 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('game_survey')
 
+#Invalid input loop
+def invalid_input():
+            answer = input("Not a valid input. Please type a or b\n\
+            Would you like to restart?\n\
+            Press 'y' for YES and 'n' for NO:...\n").lower()
+            if answer == "y":
+                start_game()
+            elif answer == "n":
+                print("Thank you for playing!")
+                sys.exit()
+            else:
+                invalid_input()
 
 # Start of game
 def start_game():
@@ -47,25 +60,50 @@ def start_game():
 
                 if answer == "a":
                     # Decision AAA (Ending 9/9)
-                    print("You decided to climb through the trench.\n\
+                    answer = input("You decided to climb through the trench.\n\
     As you do you notice a pipe with a scratching noise coming from it.\n\
     You assume its a stray cat and kneel to investigate\n\
     and you see a young girl staring\n\
     at you with a giant grin getting bigger.\n\
     She crawls toward you quickly and everything goes black.\n \
-    Thank you for playing. I hope you enjoyed it. You got ending 9/9\n")
+    Thank you for playing. I hope you enjoyed it. You got ending 9/9\n\
+    Would you like to restart? Press 'y' for YES and 'n' for NO:...\n").lower()
+                    if answer == "y":
+                        start_game()
+                    elif answer == "n":
+                        print("Thank you for playing!")
+                        sys.exit()
+                    else:
+                        invalid_input()
+
                 elif answer == "b":  # Decision AAB
-                    print("You proceed in search of a new route.\n\
+                    answer = input("You proceed in search of a new route.\n\
     As you walk you feel eyes watching you. You turn around,\n\
     nothing is there. You breathe a sigh of relief. Then a sharp pain\n\
     shoots up your leg and you fall in pain. Two hands reach around\n\
     your head, you hear a childish giggle, everything goes black.\n\
     Thank you for playing I hope you enjoyed it. This is a secret ending \n\
-    SSHHH....")
-
+    SSHHH....\n\
+    Would you like to restart? Press 'y' for YES and 'n' for NO:...\n").lower()
+                    if answer == "y":
+                        start_game()
+                    elif answer == "n":
+                        print("Thank you for playing!")
+                        sys.exit()
+                    else:
+                        invalid_input()
+                    
                 else:  # Decision AAX
-                    print("Surely you have the hang of it by now?. You lose.\n\
-    HINT: Just type a or b")
+                    answer = input("Not a valid input. Please type a or b\n\
+                    Would you like to restart?\n\
+                    Press 'y' for YES and 'n' for NO:...\n").lower()
+                    if answer == "y":
+                        start_game()
+                    elif answer == "n":
+                        print("Thank you for playing!")
+                        sys.exit()
+                    else:
+                        invalid_input()
 
             elif answer == "b":  # Decision AB
                 answer = input("You find a nearby alleyway to try\n\
@@ -79,22 +117,34 @@ def start_game():
     (a) keep going forward (b) turn back.\n").lower()
 
                     if answer == "a":  # Decision ABAA (Ending 7/9)
-                        print("As you proceed, you hear a noise behind you\n\
+                        answer = input("As you proceed, you hear a noise behind you\n\
     , you begin to run this noise becomes louder and louder.\n\
     You trip, a set of glowing red eyes drag themselves up to your legs\n\
     as you feel a set of cold hands on you. Darkness fades over you.\n\
-    Thank you for playing, I hope you enjoyed it. You got ending 7/9\n")
-
+    Thank you for playing, I hope you enjoyed it. You got ending 7/9\n\
+    Would you like to restart? Press 'y' for YES and 'n' for NO:...\n").lower()
+                    if answer == "y":
+                        start_game()
+                    elif answer == "n":
+                        print("Thank you for playing!")
+                        sys.exit()
+                     
                     elif answer == "b":  # Decision ABAB (Ending 8/9)
                         print("As you turn around to go back you notice\n\
     a young girl lying on the ground. As you get closer you see she\n\
     seems to be missing her lower torso. You run to see if she is okay\n\
     She looks up and smiles before grinning to expose large razor like\n\
     teeth.\n\
-    Thank you for playing, I hope you enjoyed it. You got ending 8/9\n")
+    Thank you for playing, I hope you enjoyed it. You got ending 8/9\n\
+    Would you like to restart? Press 'y' for YES and 'n' for NO:...\n").lower()
+                    if answer == "y":
+                        start_game()
+                    elif answer == "n":
+                        print("Thank you for playing!")
+                        sys.exit()
 
                     else:  # Decision ABAX
-                        print("I think you're messing now. You lose!.")
+                        invalid_input()
 
                 elif answer == "b":  # Decision ABB
                     answer = input("After continuing for a few minutes you exit the\n\
@@ -103,7 +153,7 @@ def start_game():
     (a) go investigate the noise. (b) keep heading home.\n").lower()
 
                     if answer == "a":  # Decision ABBA (Ending 6/9)
-                        print("You decided to walk down towards the strange noise\n\
+                        answer = input("You decided to walk down towards the strange noise\n\
     to investigate. You turn towards a dark alleyway where the noise seems\n\
     to come from. As you get closer you notice what\n\
     seems to be a young girl in a school uniform missing her lower torso.\n\
@@ -111,7 +161,15 @@ def start_game():
     She begins dragging herself\n\
     along the ground towards you, the scratching of her nails getting louder\n\
     and faster.\n\
-    Thank you for playing and I hope you enjoyed it. You got ending 6/9")
+    Thank you for playing and I hope you enjoyed it. You got ending 6/9\n\
+    Would you like to restart? Press 'y' for YES and 'n' for NO:...\n").lower()
+                        if answer == "y":
+                            start_game()
+                        elif answer == "n":
+                            print("Thank you for playing!")
+                            sys.exit()
+                        else:
+                            invalid_input()
 
                     elif answer == "b":  # Decision ABBB
                         answer = input("You continue on your way home with\n\
@@ -125,7 +183,15 @@ def start_game():
     it home. The scratching is getting louder and faster. Something\n\
     hits you from behind and you fall to the ground. You feel nails\n\
     tear into your back as everything fades to black.\n\
-    Thank you for playing I hope you enjoyed this ending 5/9!\n")
+    Thank you for playing I hope you enjoyed this ending 5/9!\n\
+    Would you like to restart? Press 'y' for YES and 'n' for NO:...\n").lower()
+                            if answer == "y":
+                                start_game()
+                            elif answer == "n":
+                                print("Thank you for playing!")
+                                sys.exit()
+                            else:
+                                invalid_input()
 
                         elif answer == "b":  # Decision ABBBB
                             answer = input("You duck behind the wall as\n\
@@ -147,7 +213,15 @@ def start_game():
     The young girl uses her nails to drag herself along the ground\n\
     Her head turns and looks at you. She drags herself along the ground\n\
     towards you, the scratching getting louder and faster.\n\
-    Thank you for playing and I hope you enjoyed it. You got ending 4/9 \n")
+    Thank you for playing and I hope you enjoyed it. You got ending 4/9 \n\
+    Would you like to restart? Press 'y' for YES and 'n' for NO:...\n").lower()
+                                    if answer == "y":
+                                        start_game()
+                                    elif answer == "n":
+                                        print("Thank you for playing!")
+                                        sys.exit()
+                                    else:
+                                        invalid_input()
 
         # Decision ABBBBAA (Ending 3/9)
                                 elif answer == "a":
@@ -155,11 +229,19 @@ def start_game():
     you collide with something and tumble to the ground. You look up in\n\
     fear only to realize it was your partner who was out looking for you\n\
     as they expected you home an hour ago and became worried.\n\
-    Thank you for playing and I hope you enjoyed it. You got ending 3/9\n")
+    Thank you for playing and I hope you enjoyed it. You got ending 3/9\n\
+    Would you like to restart? Press 'y' for YES and 'n' for NO:...\n").lower()
+                                    if answer == "y":
+                                        start_game()
+                                    elif answer == "n":
+                                        print("Thank you for playing!")
+                                        sys.exit()
+                                    else:
+                                        invalid_input()
+
 
                                 else:  # Decision ABBBBAX
-                                    print("Invalid answer,\n\
-    I hope you're proud of yourself.")
+                                    invalid_input()
 
                             elif answer == "b":  # Decision ABBBBB
                                 answer = input("You step back over the wall\n\
@@ -172,7 +254,13 @@ def start_game():
     You are finally back safely inside the four walls of your family home\n\
     you know you can finally relax. You feel that over-time is not worth it\n\
     anymore.\n Thank you for playing and I hope you enjoyed it.\n\
-    You got the Good ending 1/9 \n")
+    You got the Good ending 1/9 \n\
+    Would you like to restart? Press 'y' for YES and 'n' for NO:...\n").lower()
+                                    if answer == "y":
+                                        start_game()
+                                    elif answer == "n":
+                                        print("Thank you for playing!")
+                                        sys.exit()
 
         # Decision ABBBBBA (Ending 2/9)
                                 elif answer == "a":
@@ -180,38 +268,46 @@ def start_game():
     pushing as close to the wall as possible. The scratching gets\n\
     louder and louder until you look up and see a set of glowing \n\
     red eyes lean over the wall above you.\n\
-    Thank you for playing and I hope you enjoyed it. You got ending 2/9\n")
+    Thank you for playing and I hope you enjoyed it. You got ending 2/9\n\
+    Would you like to restart? Press 'y' for YES and 'n' for NO:...\n").lower()
+                                    if answer == "y":
+                                        start_game()
+                                    elif answer == "n":
+                                        print("Thank you for playing!")
+                                        sys.exit()
 
                                 else:  # Decision ABBBBBX
-                                    print("Invalid answer.\n\
-    This is not the choice you're looking for.")
+                                    invalid_input()
 
                             else:  # Decision ABBBBX
-                                print("I expected better. Are you testing me?")
+                                invalid_input()
 
                         else:  # Decision ABBBX
-                            print("So close yet so far. You lose!\n\
-    HINT: Type a or b")
+                            invalid_input()
 
                     else:  # Decision ABBX
-                        print("I think you're messing now. You lose!.")
+                        invalid_input()
 
                 else:  # Decision ABX
-                    print("C'mon now, you can do better than that can't you?. You lose.\n\
-    HINT: Just type a or b")
+                    invalid_input()
 
             else:  # Decision AX
-                print("Is this a game to you?. You lose.\n\
-    HINT: Just type a or b")
-
+                invalid_input()
+       
         elif answer == "b":  # Decision B - This is option 'b' for game start
-            print("I think you pressed the wrong button,\n\
-    Please refresh the page and try again.\n\
-    (HINT: The correct choice is 'a'.)")
+            answer = input("Thank you playing!\n\
+            Would you like to restart?\n\
+            Press 'y' for YES and 'n' for NO:...\n").lower()
+            if answer == "y":
+                start_game()
+            elif answer == "n":
+                print("Thank you for playing!")
+                sys.exit()
+            else:
+                invalid_input()
 
         else:  # Decision X- This is to ensure valid data is entered print
-            print("You're not very good at following instructions. You lose.\n\
-    HINT: Just type a or b")
+            invalid_input()
 
 
 def get_age_data():
