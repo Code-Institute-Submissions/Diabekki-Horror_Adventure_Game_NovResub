@@ -31,7 +31,7 @@ def invalid_input():
 
 # Start of game
 def start_game():
-    user = input("Before we begin, What is your name?\n")
+    user = input("Before we begin the game, What is your name?\n")
     if user == "":
         print("Blank space not valid, please insert name")
     # A welcome message explaining the game and its function mechanic

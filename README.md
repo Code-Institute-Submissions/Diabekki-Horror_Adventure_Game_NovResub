@@ -8,12 +8,20 @@ The application also features a survey which asks the player age and favourite g
 The game features a choice-based adventure in which you play the main character and you have to guide yourself home safely and not get caught by the creature and a survey that uploads data to gspread
 - You choose how to proceed by answering a or b to the decision prompts.
 - Anything other than a or b will result in a game over and a string of text telling the user what to press.
-- input age when prompted and favourite genre for gaming survey
+- input age and favourite genre when prompted for gaming survey.
 
 ### Pre-game survey questions
 
 - This section asks the user for their favourite genre to add to the data sheet 
-![image of name input section](static/images-for-python-readme/pre-game-survey-questions.JPG) 
+![image of name input section](static/images-for-python-readme/pre-game-survey-questions.JPG)
+
+- This section asks the user for their age for the survey
+![image of name input section](static/images-for-python-readme/age-question-for-survey.JPG)
+
+- This section gets the data from the survey and gives the averages of what ages play each genre
+![image of name input section](static/images-for-python-readme/game-averages.JPG)
+
+
 
 ### Name input
 
