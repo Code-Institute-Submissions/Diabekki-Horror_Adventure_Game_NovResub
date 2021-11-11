@@ -29,11 +29,33 @@ def invalid_input():
         invalid_input()
 
 
+def invalid_name_input():
+    answer = input("Not a valid input, please type your name\n\
+    Would you like to restart?\n\
+    Press 'y' for YES and 'n' for NO:...\n").lower()
+    if answer == "y":
+        start_game()
+    elif answer == "n":
+        print("Thank you for playing!")
+        sys.exit()
+    else:
+        invalid_name_input()
+
+
 # Start of game
 def start_game():
     user = input("Before we begin the game, What is your name?\n")
     if user == "":
-        print("Blank space not valid, please insert name")
+        user = input("Not a valid input. Please type your name\n\
+            Would you like to restart?\n\
+                Press 'y' for YES and 'n' for NO:...\n").lower()
+        if user == "y":
+            start_game()
+        elif user == "n":
+            print("Thank you for playing!")
+            sys.exit()
+        else:
+            invalid_name_input()
     # A welcome message explaining the game and its function mechanic
     else:
         print("Welcome", user, ", this is a horror-adventure game based on a\n\

@@ -26,9 +26,12 @@ The game features a choice-based adventure in which you play the main character 
 ### Name input
 
 - This is the section where the user is asked for their name to personalize the welcoming screen.
-- The game can continue 
+- The game welcomes the user and asks if they would like to begin
 
-![image of name input section](static/images-for-python-readme/name-input.JPG) 
+![image of name input section](static/images-for-python-readme/name-input.JPG)
+
+
+![image of name input section](static/images-for-python-readme/name-begin-prompt.JPG) 
 
 
 ### Blank name input error
@@ -40,14 +43,14 @@ The game features a choice-based adventure in which you play the main character 
 
 ### Welcome screen
 
-- This is the welcome screen to welcome the user to the game, ask then their name and if they like to begin.
+- This is the welcome screen to welcome the user to the game, ask them their name and if they like to begin.
 
 ![image of welcome screen](static/images-for-python-readme/welcome-screen-for-user.JPG) 
 
 
 ### Quit message prompt
 
-- This is an example to show what happens when the user clicks to quit option at the beginning of the game.
+- This is an example to show what happens when the user chooses to quit at the beginning of the game.
 
 ![image of quit message](static/images-for-python-readme/when-user-clicks-quit.JPG) 
 
