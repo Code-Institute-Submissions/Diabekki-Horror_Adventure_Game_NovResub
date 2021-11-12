@@ -356,13 +356,13 @@ def get_age_data():
     return age_data
 
 
+# Age data validation to make only numbers accepted
 def validate_data(values):
     """
     Raises ValueError if strings cannot be converted into int,
     or if there isn't exactly 1 number.
     """
     try:
-        # [int(value) for value in values]
         if len(values) > 1:
             raise ValueError(
                 f"only 1 number allowed, you provided {len(values)}"
@@ -374,11 +374,12 @@ def validate_data(values):
     return True
 
 
+# Genre survey data
 def get_survey_data():
     """
-    Get age from the user.
+    Get genre from the user.
     Run a while loop to collect a valid string of data from the user
-    via the terminal, which must be 1 number.
+    via the terminal, which must be stated genres.
     The loop will repeatedly request data, until it is valid.
     """
     while True:
@@ -394,10 +395,10 @@ def get_survey_data():
     return survey_data
 
 
+# Validate genre data
 def validate_survey_data(values):
     """
-    Raises ValueError if strings cannot be converted into int,
-    or if there isn't exactly 1 number.
+    Raises ValueError if exact genres stated are not entered
     """
     try:
         if values.lower() != "horror" and values.lower() != "action" and values.lower() != "rpg" and values.lower() != "sci-fi" and values.lower() != "crime":
@@ -409,6 +410,7 @@ def validate_survey_data(values):
     return True
 
 
+# Worksheet update print
 def update_worksheet(data, worksheet):
     """
     Receives list of information for worksheet
@@ -421,6 +423,7 @@ def update_worksheet(data, worksheet):
     print(f"{worksheet} updated successfully")
 
 
+# Genre survey worksheets
 rpg_sheet = SHEET.worksheet("rpg")
 horror_sheet = SHEET.worksheet("horror")
 action_sheet = SHEET.worksheet("action")
@@ -428,6 +431,7 @@ crime_sheet = SHEET.worksheet("crime")
 scifi_sheet = SHEET.worksheet("sci-fi")
 
 
+# Final average calculations for combined age and genres
 def survey_entries_age(survey_data, age_data):
     """
     """
@@ -479,6 +483,7 @@ def survey_entries_age(survey_data, age_data):
         print("Calculating complete...")
 
 
+# Results of survey
 def survey_results():
     horror_average = horror_sheet.acell("B2").value
     print(f"The average age for playing horror games is {horror_average}")
@@ -496,6 +501,7 @@ def survey_results():
     print(f"The average age for playing scifi games is {scifi_average}")
 
 
+# Program functions
 def main():
     """
     Run program functions
@@ -507,9 +513,9 @@ def main():
     start_game()
 
 
+# Wrlcome message for the pre-game survey
 print("Welcome to the pre-game survey! Before the game begins you will be asked\
 some survey questions. By continuing with the survey questions\
 asked, you give consent for information to be stored for data information.\
 Have fun!")
 main()
-
