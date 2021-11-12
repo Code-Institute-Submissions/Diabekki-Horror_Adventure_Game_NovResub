@@ -118,8 +118,8 @@ route home but notice road works have closed the route so you decide to:\n\
 
                 else:  # Decision AAX
                     answer = input("Not a valid input. Please type a or b\n\
-                    Would you like to restart?\n\
-                    Press 'y' for YES and 'n' for NO:...\n").lower()
+                            Would you like to restart?\n\
+                            Press 'y' for YES and 'n' for NO:...\n").lower()
                     if answer == "y":
                         start_game()
                     elif answer == "n":
@@ -141,7 +141,7 @@ route home but notice road works have closed the route so you decide to:\n\
 
                     if answer == "a":  # Decision ABAA (Ending 7/9)
                         answer = input("As you proceed, you hear a noise behind you\n\
-    , you begin to run this noise becomes louder and louder.\n\
+    you begin to run this noise becomes louder and louder.\n\
     You trip, a set of glowing red eyes drag themselves up to your legs\n\
     as you feel a set of cold hands on you. Darkness fades over you.\n\
     Thank you for playing, I hope you enjoyed it. You got ending 7/9\n\
@@ -512,3 +512,4 @@ some survey questions. By continuing with the survey questions\
 asked, you give consent for information to be stored for data information.\
 Have fun!")
 main()
+
